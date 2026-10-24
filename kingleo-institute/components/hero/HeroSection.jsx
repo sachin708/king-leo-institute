@@ -35,7 +35,7 @@ export default function HeroSection({
 
   return (
     <section
-      className={`relative top-10 md:top-25 w-full min-h-screen flex flex-col justify-between overflow-hidden text-white ${className}`.trim()}
+      className={`relative w-full min-h-screen flex flex-col justify-between overflow-hidden text-white ${className}`.trim()}
       style={style}
     >
       {/* Background Images: Desktop vs Mobile */}
@@ -72,7 +72,7 @@ export default function HeroSection({
 
       {/* Main Content Area */}
       <div
-        className={`relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 pt-28 sm:pt-32 md:pt-36 pb-20 sm:pb-24 flex-1 flex flex-col justify-center ${contentClassName}`.trim()}
+        className={`relative z-10 w-full max-w-7xl mx-auto pt-28 sm:pt-32 md:pt-36 pb-20 sm:pb-24 flex-1 flex flex-col justify-center ${contentClassName}`.trim()}
       >
         <div className={`w-full flex ${selectedPosition} transition-all duration-300`}>
           {/* Render custom children or default HeroCard with cardProps */}

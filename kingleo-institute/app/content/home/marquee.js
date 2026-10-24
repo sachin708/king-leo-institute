@@ -1,0 +1,10 @@
+export const marqueeContent = {
+  items: [
+    "6 MONTHS DIPLOMA",
+    "LIVE REAL SKIN EXPERIENCE",
+    "EXPERT TATTOO TRAINING",
+    "100% PRACTICAL LEARNING",
+    "PROFESSIONAL CERTIFICATION",
+    "ADVANCED TATTOO TECHNIQUES",
+  ],
+};

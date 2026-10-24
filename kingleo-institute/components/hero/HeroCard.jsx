@@ -21,7 +21,7 @@ export default function HeroCard({
 }) {
   return (
     <div
-      className={`relative isolate w-full overflow-hidden text-center sm:text-left md:max-w-[36rem] rounded-2xl backdrop-blur-2xl backdrop-saturate-150 shadow-[0_25px_80px_-30px_rgba(0,0,0,0.8)] before:pointer-events-none before:absolute before:inset-0 before:rounded-2xl before:border before:bg-gradient-to-br before:via-transparent before:to-transparent border border-white/10 bg-white/[10] before:border-white/[0.04] before:from-white/[0.08] rounded-card border-paper/10 bg-ink/55 text-paper backdrop-blur-md p-7 sm:p-10 md:p-12 ${className}`.trim()}
+      className={`relative isolate w-full overflow-hidden text-center sm:text-left md:max-w-[31rem] lg:max-w-[36rem] rounded-2xl backdrop-blur-2xl backdrop-saturate-150 glass-panel shadow-[0_25px_80px_-30px_rgba(0,0,0,0.8)] before:pointer-events-none before:absolute before:inset-0 before:rounded-2xl before:border before:bg-gradient-to-br before:via-transparent before:to-transparent border border-white/10 bg-white/[0.04] before:border-white/[0.04] before:from-white/[0.08] rounded-card border border-paper/10 bg-ink/55 p-7 sm:p-10 md:p-12 ${className}`.trim()}
       style={style}
     >
       {/* Subtle specular top-edge lighting effect */}

@@ -18,19 +18,19 @@ export const heroContent = {
   // Tagline configuration
   tagline: {
     text: "EXPRESS YOURSELF IN INK WITH",
-    fontSize: "text-xs sm:text-sm",
+    fontSize: "text-base sm:text-lg",
     color: "text-zinc-200",
     fontWeight: "font-bold",
-    letterSpacing: "tracking-[0.16em]",
+    letterSpacing: "tracking-[0.02em]",
   },
 
   // Main Heading configuration
   heading: {
     as: "h1",
     text: "THE BEST TATTOO STUDIO IN INDORE",
-    fontSize: "text-3xl sm:text-4xl md:text-5xl lg:text-[54px]",
+    fontSize: "text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[70px]",
     fontFamily: "font-[family-name:var(--font-bebas)]",
-    lineHeight: "leading-[1.05]",
+    lineHeight: "leading-[0.94] sm:leading-[0.92]",
     letterSpacing: "tracking-tight",
     color: "text-white",
     uppercase: true,

@@ -1,6 +1,11 @@
-"use client";
-
-import React from "react";
+import {
+  Phone as LucidePhone,
+  Mail as LucideMail,
+  MessageCircle as LucideMessageCircle,
+  Menu as LucideMenu,
+  X as LucideX,
+  Send as LucideSend,
+} from "lucide-react";
 
 export function WhatsAppIcon({ className = "w-5 h-5", color = "currentColor" }) {
   return (
@@ -16,89 +21,23 @@ export function WhatsAppIcon({ className = "w-5 h-5", color = "currentColor" }) 
 }
 
 export function PhoneIcon({ className = "w-4 h-4" }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-    </svg>
-  );
+  return <LucidePhone className={className} />;
 }
 
 export function MailIcon({ className = "w-4 h-4" }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <rect width="20" height="16" x="2" y="4" rx="2" />
-      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-    </svg>
-  );
+  return <LucideMail className={className} />;
 }
 
 export function ChatBubbleIcon({ className = "w-5 h-5" }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-      <line x1="9" y1="10" x2="15" y2="10" />
-      <line x1="9" y1="14" x2="13" y2="14" />
-    </svg>
-  );
+  return <LucideMessageCircle className={className} />;
 }
 
 export function HamburgerIcon({ className = "w-6 h-6" }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <line x1="4" y1="7" x2="20" y2="7" />
-      <line x1="4" y1="12" x2="20" y2="12" />
-      <line x1="4" y1="17" x2="20" y2="17" />
-    </svg>
-  );
+  return <LucideMenu className={className} />;
 }
 
 export function CloseIcon({ className = "w-6 h-6" }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <line x1="18" y1="6" x2="6" y2="18" />
-      <line x1="6" y1="6" x2="18" y2="18" />
-    </svg>
-  );
+  return <LucideX className={className} />;
 }
 
 export function InstagramIcon({ className = "w-4 h-4" }) {
@@ -165,18 +104,5 @@ export function PinterestIcon({ className = "w-4 h-4" }) {
 }
 
 export function SendIcon({ className = "w-4 h-4" }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <line x1="22" y1="2" x2="11" y2="13" />
-      <polygon points="22 2 15 22 11 13 2 9 22 2" />
-    </svg>
-  );
+  return <LucideSend className={className} />;
 }

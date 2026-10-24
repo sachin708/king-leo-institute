@@ -5,6 +5,14 @@ import Navbar from "@/components/layout/Navbar";
 import MenuModal from "@/components/layout/MenuModal";
 import HeroSection from "@/components/hero/HeroSection";
 import HeroCard from "@/components/hero/HeroCard";
+import MarqueeSection from "@/components/marquee/MarqueeSection";
+import { marqueeContent } from "@/app/content/home/marquee";
+import FeatureSection from "@/components/features/FeatureSection";
+import { featuresContent } from "@/app/content/home/features";
+import ImageFeatureCards from "@/components/courses/ImageFeatureCards";
+import { coursesContent } from "@/app/content/home/courses";
+import MentorsSection from "@/components/mentors/MentorsSection";
+import { mentorsContent } from "@/app/content/home/mentors";
 import FloatingActions from "@/components/floating/FloatingActions";
 import { PhoneIcon, WhatsAppIcon } from "@/components/ui/Icons";
 import { heroContent } from "@/app/content/home/hero";
@@ -83,6 +91,14 @@ export default function Home() {
           buttons={heroButtons}
         />
       </HeroSection>
+
+      <MarqueeSection items={marqueeContent.items} />
+
+      <FeatureSection {...featuresContent} />
+
+      <ImageFeatureCards {...coursesContent} />
+
+      <MentorsSection {...mentorsContent} />
 
 
 
