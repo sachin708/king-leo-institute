@@ -44,10 +44,10 @@ export default function SocialSidebar({
   return (
     <aside
       aria-label="Social links"
-      className={`hidden lg:flex fixed right-4 xl:right-6 top-1/2 -translate-y-1/2 z-20 flex-col items-center gap-3 ${className}`.trim()}
+      className={`hidden lg:flex fixed right-4 xl:right-1 top-1/2 -translate-y-1/2 z-20 flex-col items-center gap-3 ${className}`.trim()}
       style={style}
     >
-      <div className="flex flex-col gap-2.5 p-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/10 shadow-lg">
+      <div className="flex flex-col gap-2.5 p-1.5">
         {activeLinks.map((item, idx) => (
           <a
             key={idx}
@@ -55,7 +55,7 @@ export default function SocialSidebar({
             target="_blank"
             rel="noopener noreferrer"
             aria-label={item.name}
-            className="w-8 h-8 rounded-full flex items-center justify-center text-zinc-300 hover:text-white bg-black/50 hover:bg-white/20 transition-all duration-200 hover:scale-110"
+            className="w-10 h-10 rounded-[4px] flex items-center justify-center text-zinc-300 hover:text-white bg-black/60 hover:bg-white/20 transition-all duration-200 hover:scale-110"
           >
             {item.icon}
           </a>

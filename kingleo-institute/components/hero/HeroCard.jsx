@@ -9,7 +9,6 @@ import Button from "@/components/ui/Button";
 /**
  * Reusable HeroCard Component
  * Frosted glassmorphism container that wraps the tagline, heading, description, and action buttons.
- * Fully configurable through props (styles, typography, classes, children).
  */
 export default function HeroCard({
   tagline = "EXPRESS YOURSELF IN INK WITH",
@@ -22,7 +21,7 @@ export default function HeroCard({
 }) {
   return (
     <div
-      className={`relative w-full max-w-[480px] lg:max-w-[500px] xl:max-w-[520px] rounded-[24px] sm:rounded-[28px] p-6 sm:p-8 lg:p-9 glass-panel overflow-hidden transition-all duration-300 ${className}`.trim()}
+      className={`relative isolate w-full overflow-hidden text-center sm:text-left md:max-w-[36rem] rounded-2xl backdrop-blur-2xl backdrop-saturate-150 shadow-[0_25px_80px_-30px_rgba(0,0,0,0.8)] before:pointer-events-none before:absolute before:inset-0 before:rounded-2xl before:border before:bg-gradient-to-br before:via-transparent before:to-transparent border border-white/10 bg-white/[10] before:border-white/[0.04] before:from-white/[0.08] rounded-card border-paper/10 bg-ink/55 text-paper backdrop-blur-md p-7 sm:p-10 md:p-12 ${className}`.trim()}
       style={style}
     >
       {/* Subtle specular top-edge lighting effect */}
@@ -33,38 +32,35 @@ export default function HeroCard({
 
       <div className="flex flex-col gap-3 sm:gap-4">
         {/* Tagline / Subtitle */}
-        {tagline && (
-          typeof tagline === "string" ? (
+        {tagline &&
+          (typeof tagline === "string" ? (
             <Tagline text={tagline} />
           ) : (
             <Tagline {...tagline} />
-          )
-        )}
+          ))}
 
         {/* Main Heading */}
-        {heading && (
-          typeof heading === "string" ? (
+        {heading &&
+          (typeof heading === "string" ? (
             <Heading text={heading} />
           ) : (
             <Heading {...heading} />
-          )
-        )}
+          ))}
 
         {/* Description Paragraph */}
-        {description && (
-          typeof description === "string" ? (
+        {description &&
+          (typeof description === "string" ? (
             <Description text={description} />
           ) : (
             <Description {...description} />
-          )
-        )}
+          ))}
 
-        {/* Custom children slot if provided */}
+        {/* Custom children slot */}
         {children}
 
-        {/* Action Buttons List */}
+        {/* Action Buttons */}
         {buttons && buttons.length > 0 && (
-          <div className="flex flex-col gap-2.5 sm:gap-3 pt-2 sm:pt-3">
+          <div className="flex flex-col items-center gap-2.5 sm:gap-3 pt-2 sm:pt-3">
             {buttons.map((btn, index) => (
               <Button
                 key={index}

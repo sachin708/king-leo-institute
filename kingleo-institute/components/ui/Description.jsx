@@ -12,7 +12,7 @@ export default function Description({
   children,
   fontSize = "text-xs sm:text-sm md:text-[15px]",
   fontFamily = "font-sans",
-  fontWeight = "font-normal",
+  fontWeight = "font-semibold",
   lineHeight = "leading-relaxed",
   color = "text-zinc-300",
   maxWidth = "max-w-xl",
