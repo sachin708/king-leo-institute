@@ -101,13 +101,13 @@ export default function RealStoriesSection({
       <div className="relative w-full overflow-hidden">
         <div
           ref={emblaRef}
-          className="overflow-hidden cursor-grab active:cursor-grabbing px-4 sm:px-6"
+          className="overflow-hidden cursor-grab active:cursor-grabbing"
         >
-          <div className="flex gap-5 sm:gap-6">
+          <div className="flex">
             {slides.map((story, index) => (
               <div
                 key={`${story.name}-${index}`}
-                className="relative isolate w-[280px] sm:w-[320px] lg:w-[360px] min-h-[280px] sm:min-h-[295px] shrink-0 rounded-2xl border border-zinc-200/90 shadow-sm hover:shadow-md hover:border-zinc-300 transition-all duration-300 bg-white p-6 sm:p-7 flex flex-col justify-between"
+                className="relative isolate w-[280px] sm:w-[320px] lg:w-[360px] min-h-[280px] sm:min-h-[295px] shrink-0 mr-5 sm:mr-6 rounded-2xl border border-zinc-200/90 shadow-sm hover:shadow-md hover:border-zinc-300 transition-all duration-300 bg-white p-6 sm:p-7 flex flex-col justify-between"
               >
                 <div>
                   {/* Top Quote Icon & Star Rating */}

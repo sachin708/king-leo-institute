@@ -19,7 +19,7 @@ export default function ImageCarousel({
   cardWidth = "w-[260px] sm:w-[300px] lg:w-[320px]",
   cardHeight = "h-[370px] sm:h-[430px] lg:h-[470px]",
   rounded = "rounded-2xl",
-  gap = "gap-4 sm:gap-5",
+  spacing = "mr-4 sm:mr-5",
   className = "",
 }) {
   const [emblaRef] = useEmblaCarousel(
@@ -48,9 +48,9 @@ export default function ImageCarousel({
       {/* Embla Viewport */}
       <div
         ref={emblaRef}
-        className="overflow-hidden cursor-grab active:cursor-grabbing px-4 sm:px-6"
+        className="overflow-hidden cursor-grab active:cursor-grabbing"
       >
-        <div className={`flex ${gap}`}>
+        <div className="flex">
           {slides.map((item, index) => {
             const src = typeof item === "string" ? item : item.src || item.image;
             const name = typeof item === "object" ? item.name : null;
@@ -66,7 +66,7 @@ export default function ImageCarousel({
             return (
               <div
                 key={`${src}-${index}`}
-                className={`relative isolate ${cardWidth} ${cardHeight} shrink-0 ${rounded} overflow-hidden border border-zinc-200/90 shadow-md group bg-zinc-900`}
+                className={`relative isolate ${cardWidth} ${cardHeight} shrink-0 ${spacing} ${rounded} overflow-hidden border border-zinc-200/90 shadow-md group bg-zinc-900`}
               >
                 <Image
                   src={src}
