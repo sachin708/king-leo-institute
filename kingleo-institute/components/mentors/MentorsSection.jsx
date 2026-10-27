@@ -1,21 +1,19 @@
 "use client";
 
-import React, { useCallback } from "react";
+import React from "react";
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import Tagline from "@/components/ui/Tagline";
 import Heading from "@/components/ui/Heading";
 import Description from "@/components/ui/Description";
 
 /**
  * Reusable Mentors Carousel Component
- * - Uses Tagline and Heading for the section header
- * - Uses Tagline (small heading), Heading, and Description inside each mentor image card
- * - Compact vertical spacing
- * - Slightly slow auto-scroll speed with pause on hover
- * - Interactive left and right arrow buttons
+ * - White background with black text for section header
+ * - Continuous smooth auto-scroll carousel that continues moving even on hover
+ * - Navigation arrow buttons removed
+ * - Uses Tagline, Heading, and Description inside each mentor card
  */
 export default function MentorsSection({
   tagline = "MEET THE MENTORS",
@@ -26,7 +24,7 @@ export default function MentorsSection({
   repeat = 3,
   className = "",
 }) {
-  const [emblaRef, emblaApi] = useEmblaCarousel(
+  const [emblaRef] = useEmblaCarousel(
     {
       loop: true,
       dragFree: true,
@@ -37,18 +35,10 @@ export default function MentorsSection({
         speed,
         startDelay: 0,
         stopOnInteraction: false,
-        stopOnMouseEnter: true,
+        stopOnMouseEnter: false,
       }),
     ]
   );
-
-  const scrollPrev = useCallback(() => {
-    if (emblaApi) emblaApi.scrollPrev();
-  }, [emblaApi]);
-
-  const scrollNext = useCallback(() => {
-    if (emblaApi) emblaApi.scrollNext();
-  }, [emblaApi]);
 
   if (!mentors.length) return null;
 
@@ -57,7 +47,7 @@ export default function MentorsSection({
 
   return (
     <section
-      className={`w-full bg-black text-white py-8 sm:py-10 lg:py-12 overflow-hidden select-none ${className}`.trim()}
+      className={`w-full bg-white text-black py-8 sm:py-10 lg:py-12 overflow-hidden select-none ${className}`.trim()}
     >
       {/* Section Header: Uses Tagline (small heading), Heading, and Description components */}
       <div className="mx-auto max-w-7xl px-5 sm:px-8 mb-6 sm:mb-8 text-center flex flex-col items-center">
@@ -66,7 +56,7 @@ export default function MentorsSection({
             text={tagline}
             fontSize="text-xs sm:text-sm"
             letterSpacing="tracking-[0.25em]"
-            color="text-zinc-400"
+            color="text-black"
             uppercase={true}
             className="mb-2"
           />
@@ -79,7 +69,7 @@ export default function MentorsSection({
           fontSize="text-3xl sm:text-4xl md:text-5xl lg:text-[52px]"
           lineHeight="leading-tight sm:leading-[1.1]"
           letterSpacing="tracking-tight"
-          color="text-white"
+          color="text-black"
           uppercase={false}
           className="max-w-3xl whitespace-pre-line"
         />
@@ -87,42 +77,22 @@ export default function MentorsSection({
           <Description
             text={description}
             fontSize="text-sm sm:text-base"
-            color="text-zinc-400"
+            color="text-neutral-700"
             maxWidth="max-w-2xl"
             className="mt-3"
           />
         )}
       </div>
 
-      {/* Carousel Track with Navigation Controls */}
+      {/* Carousel Track without arrow buttons */}
       <div className="relative w-full">
-        {/* Left Arrow Button */}
-        <button
-          type="button"
-          onClick={scrollPrev}
-          aria-label="Previous mentor"
-          className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-black/75 hover:bg-black border border-white/20 text-white flex items-center justify-center transition-all hover:scale-105 active:scale-95 cursor-pointer backdrop-blur-md shadow-xl focus:outline-none"
-        >
-          <ChevronLeft className="w-5 h-5 text-zinc-200 hover:text-white" />
-        </button>
-
-        {/* Right Arrow Button */}
-        <button
-          type="button"
-          onClick={scrollNext}
-          aria-label="Next mentor"
-          className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-black/75 hover:bg-black border border-white/20 text-white flex items-center justify-center transition-all hover:scale-105 active:scale-95 cursor-pointer backdrop-blur-md shadow-xl focus:outline-none"
-        >
-          <ChevronRight className="w-5 h-5 text-zinc-200 hover:text-white" />
-        </button>
-
         {/* Embla Viewport */}
         <div ref={emblaRef} className="overflow-hidden cursor-grab active:cursor-grabbing px-4 sm:px-6">
           <div className="flex gap-4 sm:gap-5">
             {slides.map((mentor, index) => (
               <div
                 key={`${mentor.name}-${index}`}
-                className="relative isolate w-[260px] sm:w-[300px] lg:w-[320px] h-[380px] sm:h-[440px] lg:h-[480px] shrink-0 rounded-2xl overflow-hidden border border-white/10 group bg-zinc-900"
+                className="relative isolate w-[260px] sm:w-[300px] lg:w-[320px] h-[380px] sm:h-[440px] lg:h-[480px] shrink-0 overflow-hidden border border-zinc-200/80 shadow-md group bg-zinc-900"
               >
                 {/* Mentor Photo */}
                 <Image
@@ -148,7 +118,7 @@ export default function MentorsSection({
                       fontSize="text-[11px] sm:text-xs"
                       fontWeight="font-bold"
                       letterSpacing="tracking-[0.2em]"
-                      color="text-zinc-400"
+                      color="text-zinc-300"
                       uppercase={true}
                     />
                   )}
@@ -172,7 +142,7 @@ export default function MentorsSection({
                     <Description
                       text={mentor.role}
                       fontSize="text-xs sm:text-sm"
-                      color="text-zinc-400"
+                      color="text-zinc-300"
                       className="mt-0.5"
                     />
                   )}

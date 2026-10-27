@@ -13,6 +13,18 @@ import ImageFeatureCards from "@/components/courses/ImageFeatureCards";
 import { coursesContent } from "@/app/content/home/courses";
 import MentorsSection from "@/components/mentors/MentorsSection";
 import { mentorsContent } from "@/app/content/home/mentors";
+import AwardsSection from "@/components/awards/AwardsSection";
+import { awardsContent } from "@/app/content/home/awards";
+import DiplomaSection from "@/components/diploma/DiplomaSection";
+import { diplomaContent } from "@/app/content/home/diploma";
+import SyntheticSkinSection from "@/components/diploma/SyntheticSkinSection";
+import { syntheticSkinContent } from "@/app/content/home/syntheticSkin";
+import LiveRealSkinSection from "@/components/diploma/LiveRealSkinSection";
+import { liveRealSkinContent } from "@/app/content/home/liveRealSkin";
+import AlumniSection from "@/components/diploma/AlumniSection";
+import { alumniContent } from "@/app/content/home/alumni";
+import RealStoriesSection from "@/components/testimonials/RealStoriesSection";
+import { storiesContent } from "@/app/content/home/stories";
 import FloatingActions from "@/components/floating/FloatingActions";
 import { PhoneIcon, WhatsAppIcon } from "@/components/ui/Icons";
 import { heroContent } from "@/app/content/home/hero";
@@ -99,6 +111,18 @@ export default function Home() {
       <ImageFeatureCards {...coursesContent} />
 
       <MentorsSection {...mentorsContent} />
+
+      <AwardsSection {...awardsContent} />
+
+      <DiplomaSection {...diplomaContent} />
+
+      <SyntheticSkinSection {...syntheticSkinContent} />
+
+      <LiveRealSkinSection {...liveRealSkinContent} />
+
+      <AlumniSection {...alumniContent} />
+
+      <RealStoriesSection {...storiesContent} />
 
 
 
