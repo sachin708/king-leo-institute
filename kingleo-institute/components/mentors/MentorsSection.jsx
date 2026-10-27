@@ -87,12 +87,12 @@ export default function MentorsSection({
       {/* Carousel Track without arrow buttons */}
       <div className="relative w-full">
         {/* Embla Viewport */}
-        <div ref={emblaRef} className="overflow-hidden cursor-grab active:cursor-grabbing">
-          <div className="flex">
+        <div ref={emblaRef} className="overflow-hidden cursor-grab active:cursor-grabbing px-4 sm:px-6">
+          <div className="flex gap-4 sm:gap-5">
             {slides.map((mentor, index) => (
               <div
                 key={`${mentor.name}-${index}`}
-                className="relative isolate w-[260px] sm:w-[300px] lg:w-[320px] h-[380px] sm:h-[440px] lg:h-[480px] shrink-0 mr-4 sm:mr-5 overflow-hidden border border-zinc-200/80 shadow-md group bg-zinc-900"
+                className="relative isolate w-[260px] sm:w-[300px] lg:w-[320px] h-[380px] sm:h-[440px] lg:h-[480px] shrink-0 overflow-hidden border border-zinc-200/80 shadow-md group bg-zinc-900"
               >
                 {/* Mentor Photo */}
                 <Image
