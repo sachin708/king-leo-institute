@@ -25,6 +25,8 @@ import AlumniSection from "@/components/diploma/AlumniSection";
 import { alumniContent } from "@/app/content/home/alumni";
 import RealStoriesSection from "@/components/testimonials/RealStoriesSection";
 import { storiesContent } from "@/app/content/home/stories";
+import ArtistJourneySection from "@/components/journey/ArtistJourneySection";
+import { artistJourneyContent } from "@/app/content/home/artistJourney";
 import FloatingActions from "@/components/floating/FloatingActions";
 import { PhoneIcon, WhatsAppIcon } from "@/components/ui/Icons";
 import { heroContent } from "@/app/content/home/hero";
@@ -49,7 +51,7 @@ export default function Home() {
   });
 
   return (
-    <main className="relative min-h-screen w-full text-white flex flex-col overflow-x-hidden selection:bg-emerald-500 selection:text-black">
+    <main className="relative min-h-screen w-full text-white flex flex-col overflow-x-clip selection:bg-emerald-500 selection:text-black">
       {/* Top Navigation Bar with Kingleo Logo and Hamburger */}
       <Navbar
         logoSrc="/icons/Kinglio-white.png"
@@ -123,6 +125,8 @@ export default function Home() {
       <AlumniSection {...alumniContent} />
 
       <RealStoriesSection {...storiesContent} />
+
+      <ArtistJourneySection {...artistJourneyContent} />
 
 
 

@@ -66,3 +66,20 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.4);
 }
+
+/* Parallax Journey Section with viewport clip-path */
+.cta-journey {
+  position: relative;
+  z-index: 1;
+  clip-path: inset(0px);
+  -webkit-clip-path: inset(0px);
+  min-height: 145vh;
+}
+
+@media (max-width: 767px) {
+  .cta-journey {
+    clip-path: inset(0px);
+    -webkit-clip-path: inset(0px);
+    min-height: 175vh;
+  }
+}
