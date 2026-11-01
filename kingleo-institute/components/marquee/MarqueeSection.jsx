@@ -10,7 +10,7 @@ import AutoScroll from "embla-carousel-auto-scroll";
  */
 export default function MarqueeSection({
   items = [],
-  speed = 1.6,
+  speed = 1.0,
   repeat = 3,
   direction = "forward", // "forward" = content moves right-to-left, "backward" = left-to-right
   separatorColor = "bg-teal-500",
@@ -22,7 +22,7 @@ export default function MarqueeSection({
   letterSpacing = "tracking-[0.08em]",
   itemGap = "gap-6 md:gap-10 lg:gap-14",
   padding = "py-6 md:py-8 lg:py-10",
-  margin = "mt-[40px] lg:mt-[120px]",
+  margin = "",
   className = "",
 }) {
   const [emblaRef] = useEmblaCarousel(

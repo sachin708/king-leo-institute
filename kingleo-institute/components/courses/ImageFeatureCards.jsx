@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
+import Button from "@/components/ui/Button";
 import SectionHeader from "@/components/ui/SectionHeader";
 import Tagline from "@/components/ui/Tagline";
 import Heading from "@/components/ui/Heading";
@@ -18,7 +18,7 @@ export default function ImageFeatureCards({
   headerProps = {},
   background = "bg-white",
   margin = "",
-  cardHeight = "h-[520px] sm:h-[690px] lg:h-[780px]",
+  cardHeight = "h-[620px] sm:h-[790px] lg:h-[850px]",
   gradient = "bg-gradient-to-t from-black/90 via-black/40 to-transparent",
   imageSizes = "(min-width: 1024px) 50vw, 100vw",
   className = "",
@@ -26,8 +26,8 @@ export default function ImageFeatureCards({
   if (!cards.length) return null;
 
   return (
-    <section className={`w-full ${background} ${margin} ${className}`.trim()}>
-      <div className="mx-auto max-w-7xl px-5 py-12 sm:px-8 lg:py-20">
+    <section className={`w-full overflow-x-clip ${background} ${margin} ${className}`.trim()}>
+      <div className="mx-auto max-w-7xl px-5 pb-1 pt-12 sm:px-8 lg:pt-20 lg:pb-0">
         <SectionHeader
           tagline={tagline}
           heading={heading}
@@ -36,7 +36,7 @@ export default function ImageFeatureCards({
           {...headerProps}
         />
 
-        <ul className="mt-10 grid grid-cols-1 gap-5 lg:mt-14 lg:grid-cols-2 lg:gap-6">
+        <ul className="mt-10 grid grid-cols-1 gap-5 lg:mt-14 lg:grid-cols-2 lg:gap-2 mx-[calc(50%-50vw)]">
           {cards.map((card, i) => (
             <li key={card.title}>
               <article
@@ -85,12 +85,13 @@ export default function ImageFeatureCards({
                     />
                   )}
                   {card.cta && (
-                    <Link
+                    <Button
                       href={card.cta.href}
-                      className="mt-5 inline-flex items-center text-xs font-bold uppercase tracking-[0.2em] text-white underline-offset-8 transition-colors hover:underline focus:outline-none focus-visible:underline"
-                    >
-                      {card.cta.label} <span aria-hidden="true" className="ml-2">→</span>
-                    </Link>
+                      label={card.cta.label}
+                      variant="glass"
+                      fullWidth={false}
+                      className="mt-5 px-6 uppercase tracking-[0.15em] font-bold"
+                    />
                   )}
                 </div>
               </article>

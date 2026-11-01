@@ -26,7 +26,7 @@ export const mentorsContent = {
     {
       name: "Pradeep Singh Panwar",
       role: "COO / Studio Director",
-      experience: "10+ YEARS",
+      experience: "5+ YEARS",
       image: "/home/meet-the-mentors/PradeepSinghPanwar.webp",
     },
     {

@@ -46,7 +46,7 @@ export default function SectionHeader({
           lineHeight="leading-[1.05]"
           color="text-black"
           uppercase={false}
-          className={`max-w-4xl ${tagline ? "mt-5" : ""}`}
+          className={`max-w-4xl ${tagline ? "mt-4" : ""}`}
           {...headingProps}
         />
       )}

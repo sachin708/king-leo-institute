@@ -11,7 +11,7 @@ import ChatBotModal from "@/components/chat/ChatBotModal";
  * 2. Chatbot Button: opens the interactive Kingleo Institute chatbot modal
  */
 export default function FloatingActions({
-  whatsappNumber = "919584228615",
+  whatsappNumber = "919343623234",
   whatsappMessage = "Hi Kingleo Institute, I would like to inquire about tattoo services and courses.",
   instituteName = "Kingleo Institute",
   chatbotLogo = "/icons/Kinglio-back.jpg",

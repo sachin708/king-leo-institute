@@ -15,7 +15,7 @@ function DiplomaCard({ card }) {
   if (!card) return null;
 
   return (
-    <article className="group relative flex flex-col justify-between bg-white rounded-2xl border border-zinc-200/90 p-6 sm:p-7 hover:border-zinc-400 hover:shadow-lg transition-all duration-300 h-full">
+    <article className="group relative flex flex-col justify-between bg-white rounded-2xl border border-zinc-400/90 p-6 sm:p-7 hover:border-zinc-400 hover:shadow-lg transition-all duration-300 h-full">
       <div>
         <h3 className="font-sans font-bold text-lg sm:text-xl lg:text-[22px] text-black leading-snug">
           {card.title}
@@ -28,9 +28,18 @@ function DiplomaCard({ card }) {
       <div className="mt-6 sm:mt-8 pt-2">
         <Link
           href={card.cta?.href || "#"}
-          className="w-full py-3 px-4 rounded-xl border border-zinc-300 bg-zinc-50 hover:bg-black hover:text-white hover:border-black text-black font-bold text-xs tracking-[0.2em] uppercase transition-all duration-300 text-center flex items-center justify-center shadow-sm hover:shadow cursor-pointer"
+          className="group relative overflow-hidden w-full py-3 px-4 rounded-xl border border-zinc-300 bg-zinc-50 hover:bg-black hover:text-white hover:border-black text-black font-bold text-xs tracking-[0.2em] uppercase transition-all duration-300 text-center flex items-center justify-center shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] hover:shadow cursor-pointer"
         >
-          {card.cta?.label || "KNOW MORE"}
+          {/* Glassy effect: top gloss highlight + hover shine sweep */}
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-x-0 top-0 h-1/2 rounded-t-xl bg-gradient-to-b from-white/70 to-transparent group-hover:from-white/20"
+          />
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-y-0 -left-full w-1/2 -skew-x-12 bg-gradient-to-r from-transparent via-white/50 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-[400%]"
+          />
+          <span className="relative">{card.cta?.label || "KNOW MORE"}</span>
         </Link>
       </div>
     </article>
@@ -41,15 +50,15 @@ function DiplomaCard({ card }) {
  * Diploma Tattoo Art Section
  * - White background with black typography
  * - Desktop: 3 rows × 3 columns (9 cards total).
- *   In each row: Card 1 -> Vertical Divider -> Card 2 -> Vertical Divider -> Card 3.
- *   Between rows: Full-width Horizontal Divider line.
+ *   In each row: Card 1 -> Card 2 -> Card 3, separated by a gap (no divider lines).
+ *   Between rows: Empty spacing.
  * - Mobile: Single column, one by one.
- *   Between each card: Clean Horizontal Divider line.
+ *   Between each card: Empty spacing (no divider lines).
  */
 export default function DiplomaSection({
   tagline = "6 MONTH DIPLOMA ROADMAP",
   heading = "Diploma Tattoo Art",
-  description = "Central India's only complete ZERO TO CERTIFIED PRO system that builds your art, career, brand and income together. From certification to safety to paid internship — we don't just teach tattooing, we build your future.",
+  description = "Central India's only complete ZERO TO CERTIFIED PRO system that builds your art, career, brand and income together. From certification to safety to paid internship we don't just teach tattooing, we build your future.",
   cards = [],
   className = "",
 }) {
@@ -64,11 +73,11 @@ export default function DiplomaSection({
 
   return (
     <section
-      className={`w-full bg-white text-black py-14 sm:py-20 lg:py-24 overflow-hidden select-none ${className}`.trim()}
+      className={`w-full bg-white text-black pt-12 lg:pt-20 overflow-hidden select-none ${className}`.trim()}
     >
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         {/* Section Header styled after FeatureSection */}
-        <header className="flex flex-col items-center text-center max-w-4xl mx-auto mb-12 sm:mb-16 lg:mb-20">
+        <header className="flex flex-col items-center text-center max-w-4xl mx-auto mb-8 lg:mb-10">
           {tagline && (
             <Tagline
               text={tagline}
@@ -76,7 +85,7 @@ export default function DiplomaSection({
               letterSpacing="tracking-[0.3em]"
               color="text-black"
               uppercase={true}
-              className="mb-4 sm:mb-5"
+              className="mb-3 md:mb-4"
             />
           )}
 
@@ -99,17 +108,17 @@ export default function DiplomaSection({
               fontSize="text-sm md:text-base lg:text-[17px]"
               color="text-neutral-600"
               maxWidth="max-w-3xl"
-              className="mt-5 leading-relaxed text-center"
+              className="mt-3 md:mt-4 leading-relaxed text-center"
             />
           )}
         </header>
 
-        {/* Rows of Cards with Desktop Vertical Dividers & Mobile Horizontal Dividers */}
+        {/* Rows of Cards separated by spacing only (no divider lines) */}
         <div className="w-full flex flex-col">
           {rows.map((rowCards, rowIndex) => (
             <React.Fragment key={`diploma-row-${rowIndex}`}>
-              {/* Row Layout: Flex-row on desktop, Flex-col on mobile */}
-              <div className="flex flex-col lg:flex-row items-stretch gap-6 lg:gap-0">
+              {/* Row Layout: Flex-row on desktop, Flex-col on mobile, spaced with gap */}
+              <div className="flex flex-col lg:flex-row items-stretch gap-6 lg:gap-8">
                 {/* Column 1 */}
                 {rowCards[0] && (
                   <div className="flex-1 flex flex-col">
@@ -117,46 +126,10 @@ export default function DiplomaSection({
                   </div>
                 )}
 
-                {/* Mobile Horizontal Divider after Col 1 */}
-                {rowCards[1] && (
-                  <div
-                    aria-hidden="true"
-                    className="lg:hidden w-full border-t border-zinc-200 my-1"
-                  />
-                )}
-
-                {/* Desktop Vertical Divider after Col 1 */}
-                {rowCards[1] && (
-                  <div
-                    aria-hidden="true"
-                    className="hidden lg:flex items-center justify-center px-4 xl:px-6"
-                  >
-                    <div className="w-[1px] h-full min-h-[220px] bg-zinc-200" />
-                  </div>
-                )}
-
                 {/* Column 2 */}
                 {rowCards[1] && (
                   <div className="flex-1 flex flex-col">
                     <DiplomaCard card={rowCards[1]} />
-                  </div>
-                )}
-
-                {/* Mobile Horizontal Divider after Col 2 */}
-                {rowCards[2] && (
-                  <div
-                    aria-hidden="true"
-                    className="lg:hidden w-full border-t border-zinc-200 my-1"
-                  />
-                )}
-
-                {/* Desktop Vertical Divider after Col 2 */}
-                {rowCards[2] && (
-                  <div
-                    aria-hidden="true"
-                    className="hidden lg:flex items-center justify-center px-4 xl:px-6"
-                  >
-                    <div className="w-[1px] h-full min-h-[220px] bg-zinc-200" />
                   </div>
                 )}
 
@@ -168,11 +141,11 @@ export default function DiplomaSection({
                 )}
               </div>
 
-              {/* Horizontal Divider between Rows */}
+              {/* Spacer between rows (matches the card gap) */}
               {rowIndex < rows.length - 1 && (
                 <div
                   aria-hidden="true"
-                  className="w-full my-3 sm:my-4 lg:my-5"
+                  className="w-full h-6 lg:h-8"
                 />
               )}
             </React.Fragment>

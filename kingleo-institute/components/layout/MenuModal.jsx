@@ -84,7 +84,7 @@ export default function MenuModal({
       />
 
       {/* Modal Container Card */}
-      <div className="relative z-10 w-full max-w-3xl max-h-[calc(100vh-8rem)] overflow-y-auto rounded-[24px] sm:rounded-[28px] bg-[#111113]/85 backdrop-blur-2xl p-6 sm:p-8 lg:p-9 border border-white/15 shadow-[0_30px_90px_rgba(0,0,0,0.85)] animate-in fade-in zoom-in-95 duration-200">
+      <div className="relative z-10 w-full max-w-3xl lg:translate-x-34 max-h-[calc(100vh-8rem)] overflow-y-auto rounded-[24px] sm:rounded-[28px] bg-[#111113]/85 backdrop-blur-2xl p-6 sm:p-8 lg:p-9 border border-white/15 shadow-[0_30px_90px_rgba(0,0,0,0.85)] animate-in fade-in zoom-in-95 duration-200">
         {/* Content Grid: Left Menu Links + Right Badges & Contact */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-10 items-stretch">
           {/* Left Column: Menu Links */}

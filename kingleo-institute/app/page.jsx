@@ -27,6 +27,8 @@ import RealStoriesSection from "@/components/testimonials/RealStoriesSection";
 import { storiesContent } from "@/app/content/home/stories";
 import ArtistJourneySection from "@/components/journey/ArtistJourneySection";
 import { artistJourneyContent } from "@/app/content/home/artistJourney";
+import Footer from "@/components/layout/Footer";
+import { footerContent } from "@/app/content/home/footer";
 import FloatingActions from "@/components/floating/FloatingActions";
 import { PhoneIcon, WhatsAppIcon } from "@/components/ui/Icons";
 import { heroContent } from "@/app/content/home/hero";
@@ -128,6 +130,7 @@ export default function Home() {
 
       <ArtistJourneySection {...artistJourneyContent} />
 
+      <Footer {...footerContent} />
 
 
       {/* Bottom Right Floating Actions: WhatsApp Button + Kingleo Institute Chatbot */}

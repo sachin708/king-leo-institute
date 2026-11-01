@@ -33,7 +33,7 @@ export default function ArtistJourneySection({
       label: "BOOK FREE ORIENTATION",
       iconType: "calendar",
       variant: "dark",
-      href: "https://wa.me/919584228615?text=Hi%20Kingleo%20Tattooz%2C%20I%20want%20to%20book%20a%20free%20orientation%20for%20the%20tattoo%20artist%20program",
+      href: "https://wa.me/919343623234?text=Hi%20Kingleo%20Tattooz%2C%20I%20want%20to%20book%20a%20free%20orientation%20for%20the%20tattoo%20artist%20program",
     },
     {
       label: "BOOK ON CALL",
@@ -45,7 +45,7 @@ export default function ArtistJourneySection({
       label: "BOOK ON WHATSAPP",
       iconType: "whatsapp",
       variant: "whatsapp",
-      href: "https://wa.me/919584228615?text=Hi%20Kingleo%20Tattooz%2C%20I%20want%20to%20know%20more%20about%20the%20tattoo%20artist%20journey",
+      href: "https://wa.me/919343623234?text=Hi%20Kingleo%20Tattooz%2C%20I%20want%20to%20know%20more%20about%20the%20tattoo%20artist%20journey",
     },
   ],
   highlights = [
@@ -84,13 +84,13 @@ export default function ArtistJourneySection({
         Clipped within this section by clip-path: inset(0px).
         Stays locked to the viewport while user scrolls through the 175vh height.
       */}
-      <div className="fixed inset-0 w-full h-full pointer-events-none -z-10">
+      <div className="fixed inset-0 w-full h-full pointer-events-none z-0">
         {/* Desktop Image (md and up) */}
         <div
           className="hidden md:block absolute inset-0 w-full h-full bg-cover bg-no-repeat"
           style={{
             backgroundImage: `url('${desktopImg}')`,
-            backgroundPosition: "center right md:top-18",
+            backgroundPosition: "center right",
           }}
           aria-hidden="true"
         />
@@ -173,10 +173,19 @@ export default function ArtistJourneySection({
                     href={btn.href || "#"}
                     target={btn.href?.startsWith("http") ? "_blank" : undefined}
                     rel={btn.href?.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className={`w-full md:w-auto inline-flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-xl text-xs sm:text-[13px] font-semibold tracking-wider uppercase transition-all duration-300 backdrop-blur-md active:scale-[0.98] ${buttonStyle}`}
+                    className={`group relative overflow-hidden w-full md:w-auto inline-flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-xl text-xs sm:text-[13px] font-semibold tracking-wider uppercase transition-all duration-300 backdrop-blur-xl shadow-[inset_0_1px_0_rgba(255,255,255,0.35)] active:scale-[0.98] ${buttonStyle}`}
                   >
-                    {btn.iconType && renderIcon(btn.iconType)}
-                    <span>{btn.label}</span>
+                    {/* Glassy effect: top gloss highlight + hover shine sweep */}
+                    <span
+                      aria-hidden="true"
+                      className="pointer-events-none absolute inset-x-0 top-0 h-1/2 rounded-t-xl bg-gradient-to-b from-white/25 to-transparent"
+                    />
+                    <span
+                      aria-hidden="true"
+                      className="pointer-events-none absolute inset-y-0 -left-full w-1/2 -skew-x-12 bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-[400%]"
+                    />
+                    {btn.iconType && <span className="relative">{renderIcon(btn.iconType)}</span>}
+                    <span className="relative">{btn.label}</span>
                   </Link>
                 );
               })}

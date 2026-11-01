@@ -15,7 +15,7 @@ import Description from "@/components/ui/Description";
 export default function AwardsSection({
   tagline = "AWARDS & ACHIEVEMENTS",
   heading = "Award Winning\nMentors\nRecognition That\nSpeaks",
-  description = "Honours that mark our mentors and studio — the standard every Kingleo artist is trained to meet.",
+  description = "Honours that mark our mentors and studio the standard every Kingleo artist is trained to meet.",
   desktopImage = "/home/awards-achievements/desktop.webp",
   mobileImage = "/home/awards-achievements/mobile.webp",
   imageAlt = "Award Winning Mentors - Kingleo Tattoo Institute",
@@ -50,54 +50,16 @@ export default function AwardsSection({
 
   return (
     <section
-      className={`w-full bg-white text-black py-14 sm:py-18 lg:py-24 overflow-hidden select-none ${className}`.trim()}
+      className={`w-full bg-white text-black pt-6 lg:pt-20 overflow-hidden select-none ${className}`.trim()}
     >
-      <div className="mx-auto max-w-7xl px-5 sm:px-8 flex flex-col items-center">
-        {/* Section Header: Tagline, Heading, and Description */}
-        <div className="text-center flex flex-col items-center max-w-4xl mx-auto mb-10 sm:mb-12 lg:mb-16">
-          {tagline && (
-            <Tagline
-              text={tagline}
-              fontSize="text-xs sm:text-sm"
-              letterSpacing="tracking-[0.28em]"
-              color="text-black"
-              uppercase={true}
-              className="mb-4 sm:mb-5"
-            />
-          )}
-
-          <Heading
-            as="h2"
-            text={heading}
-            fontFamily="font-sans"
-            fontWeight="font-bold"
-            fontSize="text-4xl sm:text-5xl md:text-6xl lg:text-[64px]"
-            lineHeight="leading-[1.1] sm:leading-[1.08]"
-            letterSpacing="tracking-tight"
-            color="text-black"
-            uppercase={false}
-            className="whitespace-pre-line"
-          />
-
-          {description && (
-            <Description
-              text={description}
-              fontSize="text-sm sm:text-base md:text-lg"
-              fontWeight="font-normal"
-              color="text-neutral-700"
-              maxWidth="max-w-2xl"
-              className="mt-4 sm:mt-5 leading-relaxed"
-            />
-          )}
-        </div>
-
+      <div className="w-full flex flex-col items-center">
         {/* Scalable Achievement Image Container with 2-Second Scale-Up Animation */}
         <div
           ref={imageContainerRef}
-          className="w-full max-w-5xl lg:max-w-6xl mx-auto flex justify-center"
+          className="w-full flex justify-center"
         >
           <div
-            className={`relative w-full rounded-2xl sm:rounded-3xl overflow-hidden border border-zinc-200/90 shadow-xl bg-zinc-950 transform-gpu transition-all duration-[2000ms] ease-out will-change-transform ${
+            className={`relative flex flex-col md:block w-full overflow-hidden bg-zinc-950 transform-gpu transition-all duration-[2000ms] ease-out will-change-transform ${
               hasAnimated
                 ? "scale-100 opacity-100 shadow-[0_20px_50px_rgba(0,0,0,0.12)]"
                 : "scale-[0.80] opacity-80"
@@ -111,7 +73,7 @@ export default function AwardsSection({
                 fill
                 priority
                 quality={92}
-                sizes="(min-width: 1024px) 1152px, 100vw"
+                sizes="100vw"
                 className="object-cover object-center"
               />
             </div>
@@ -124,9 +86,48 @@ export default function AwardsSection({
                 fill
                 priority
                 quality={92}
-                sizes="(max-width: 768px) 100vw, 768px"
+                sizes="100vw"
                 className="object-cover object-center"
               />
+            </div>
+
+            {/* Section Header overlay: top-centered on mobile, left side on desktop */}
+            <div className="hidden md:block absolute inset-0 z-10 pointer-events-none md:bg-gradient-to-r md:from-black/60 md:via-black/15 md:to-transparent" />
+            <div className="order-first relative md:order-none md:absolute inset-x-0 top-0 z-20 flex flex-col items-center text-center bg-white md:bg-transparent px-6 pt-4 pb-6 md:p-8 md:ml-14 md:inset-y-0 md:right-auto md:w-1/2 md:items-start md:justify-center md:text-left md:p-10 lg:p-14">
+              {tagline && (
+                <Tagline
+                  text={tagline}
+                  fontSize="text-[10px] sm:text-xs md:text-sm"
+                  letterSpacing="tracking-[0.28em]"
+                  color="text-black md:text-white"
+                  uppercase={true}
+                  className="mb-3 md:mb-4"
+                />
+              )}
+
+              <Heading
+                as="h2"
+                text={heading}
+                fontFamily="font-sans"
+                fontWeight="font-bold"
+                fontSize="text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-[52px]"
+                lineHeight="leading-[1.1] sm:leading-[1.08]"
+                letterSpacing="tracking-tight"
+                color="text-black md:text-white"
+                uppercase={false}
+                className="whitespace-pre-line"
+              />
+
+              {description && (
+                <Description
+                  text={description}
+                  fontSize="text-xs sm:text-sm md:text-base"
+                  fontWeight="font-normal"
+                  color="text-black/80 md:text-white/85"
+                  maxWidth="max-w-md"
+                  className="mt-3 md:mt-4 leading-relaxed"
+                />
+              )}
             </div>
           </div>
         </div>

@@ -7,8 +7,8 @@
 export const heroContent = {
   // Responsive background images
   images: {
-    desktop: "/home/home-hero/desktop.jpg",
-    mobile: "/home/home-hero/mobile.jpg",
+    desktop: "/home/home-hero/desktop.png",
+    mobile: "/home/home-hero/mobile.webp",
     alt: "Kingleo Tattooz Studio & Institute in Indore",
   },
 
@@ -17,7 +17,7 @@ export const heroContent = {
 
   // Tagline configuration
   tagline: {
-    text: "EXPRESS YOURSELF IN INK WITH",
+    text: "FROM PASSION",
     fontSize: "text-base sm:text-lg",
     color: "text-zinc-200",
     fontWeight: "font-bold",
@@ -27,11 +27,11 @@ export const heroContent = {
   // Main Heading configuration
   heading: {
     as: "h1",
-    text: "THE BEST TATTOO STUDIO IN INDORE",
+    text: "TO PROFESSIONAL TATTOO ARTIST",
     fontSize: "text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[70px]",
     fontFamily: "font-[family-name:var(--font-bebas)]",
     lineHeight: "leading-[0.94] sm:leading-[0.92]",
-    letterSpacing: "tracking-tight",
+    letterSpacing: "tracking-[0.09em]",
     color: "text-white",
     uppercase: true,
   },
@@ -39,7 +39,7 @@ export const heroContent = {
   // Description paragraph configuration
   description: {
     as: "p",
-    text: "If you are bold enough to get your tattoo done, it's high time to embrace the coolness of permanent ink. At Kingleo Tattooz, the best tattoo studio in Indore, our tattoo artists can bring your imagination to life. Every tattoo tells a story, and our premium designs capture it perfectly. So, let's give it a try and let your skin bloom.",
+    text: "India's only studio based 6 Months Diploma in Tattoo Art. 100% practical training, live real skin experience from day one, and direct mentorship from artists with 16+ years of experience. Not a classroom. A real tattoo studio in Indore.",
     fontSize: "text-xs sm:text-sm md:text-[15px]",
     color: "text-zinc-300",
     lineHeight: "leading-relaxed",
@@ -49,7 +49,7 @@ export const heroContent = {
   // Buttons inside the frosted card
   buttons: [
     {
-      label: "Free Consultation",
+      label: "Book Your Free Consultation",
       variant: "frosted",
       href: "#consultation",
       fullWidth: true,
@@ -65,7 +65,7 @@ export const heroContent = {
       label: "WhatsApp Chat",
       variant: "whatsapp",
       iconType: "whatsapp",
-      href: "https://wa.me/919584228615?text=Hi%20Kingleo%20Tattooz%2C%20I%20want%20to%20know%20more%20about%20your%20services",
+      href: "https://wa.me/919343623234?text=Hi%20Kingleo%20Tattooz%2C%20I%20want%20to%20know%20more%20about%20your%20services",
       fullWidth: true,
     },
   ],
@@ -74,7 +74,7 @@ export const heroContent = {
   contact: {
     phones: ["+91 95842 28615", "+91 70009 24824"],
     email: "kingleotattooz@gmail.com",
-    whatsapp: "919584228615",
+    whatsapp: "919343623234",
   },
 
   // Chatbot settings

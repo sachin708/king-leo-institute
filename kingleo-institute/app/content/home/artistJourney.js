@@ -18,10 +18,10 @@ export const artistJourneyContent = {
   },
   buttons: [
     {
-      label: "BOOK FREE ORIENTATION",
-      iconType: "calendar",
+      label: "BOOK YOUR FREE CONSULTATION",
+      // iconType: "calendar",
       variant: "frosted",
-      href: "https://wa.me/919584228615?text=Hi%20Kingleo%20Tattooz%2C%20I%20want%20to%20book%20a%20free%20orientation%20for%20the%20tattoo%20artist%20program",
+      href: "https://wa.me/919343623234?text=Hi%20Kingleo%20Tattooz%2C%20I%20want%20to%20book%20a%20free%20orientation%20for%20the%20tattoo%20artist%20program",
     },
     {
       label: "BOOK ON CALL",
@@ -33,7 +33,7 @@ export const artistJourneyContent = {
       label: "BOOK ON WHATSAPP",
       iconType: "whatsapp",
       variant: "whatsapp",
-      href: "https://wa.me/919584228615?text=Hi%20Kingleo%20Tattooz%2C%20I%20want%20to%20know%20more%20about%20the%20tattoo%20artist%20journey",
+      href: "https://wa.me/919343623234?text=Hi%20Kingleo%20Tattooz%2C%20I%20want%20to%20know%20more%20about%20the%20tattoo%20artist%20journey",
     },
   ],
   highlights: [

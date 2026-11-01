@@ -20,12 +20,12 @@ export default function LiveRealSkinSection({
   description = "These tattoos were created by our students on live skin inside a real studio — hands on training under pro artist mentorship.",
   images = [],
   speed = 0.8,
-  repeat = 3,
+  repeat = 10,
   className = "",
 }) {
   return (
     <section
-      className={`w-full bg-white text-black py-12 sm:py-16 lg:py-20 overflow-hidden select-none ${className}`.trim()}
+      className={`w-full bg-white text-black pt-12 lg:pt-20 overflow-hidden select-none ${className}`.trim()}
     >
       {/* Left-Aligned Section Header */}
       <div className="mx-auto max-w-7xl px-5 sm:px-8 mb-8 sm:mb-10 lg:mb-12 text-left flex flex-col items-start">
@@ -70,10 +70,11 @@ export default function LiveRealSkinSection({
         images={images}
         speed={speed}
         repeat={repeat}
-        cardWidth="w-[260px] sm:w-[300px] lg:w-[320px]"
+        cardWidth="w-[260px] sm:w-[300px] lg:w-[340px]"
         cardHeight="h-[370px] sm:h-[430px] lg:h-[470px]"
         rounded=""
-        gap="gap-4 sm:gap-5"
+        spacing="pr-2"
+        overlay="soft"
       />
     </section>
   );

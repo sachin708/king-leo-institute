@@ -35,11 +35,11 @@ export default function HeroSection({
 
   return (
     <section
-      className={`relative w-full min-h-screen flex flex-col justify-between overflow-hidden text-white ${className}`.trim()}
+      className={`relative w-full md:min-h-screen flex flex-col md:justify-between overflow-hidden bg-black md:bg-transparent pt-20 sm:pt-24 md:pt-0 text-white ${className}`.trim()}
       style={style}
     >
-      {/* Background Images: Desktop vs Mobile */}
-      <div className="absolute inset-0 z-0">
+      {/* Background Images: Desktop (full-bleed behind card) vs Mobile (stacked above card) */}
+      <div className="relative md:absolute md:inset-0 z-0">
         {/* Desktop Image (Screen md and above) */}
         <div className="hidden md:block relative w-full h-full">
           <Image
@@ -55,7 +55,7 @@ export default function HeroSection({
         </div>
 
         {/* Mobile Image (Screen smaller than md) */}
-        <div className="block md:hidden relative w-full h-full">
+        <div className="block md:hidden relative w-full aspect-[2/3] max-h-[102svh]">
           <Image
             src={mobileImage}
             alt={imageAlt}
@@ -72,7 +72,7 @@ export default function HeroSection({
 
       {/* Main Content Area */}
       <div
-        className={`relative z-10 w-full max-w-7xl mx-auto pt-28 sm:pt-32 md:pt-36 pb-20 sm:pb-24 flex-1 flex flex-col justify-center ${contentClassName}`.trim()}
+        className={`relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-0 -mt-4 md:mt-0 pt-0 md:pt-44 pb-10 sm:pb-12 md:pb-24 flex-1 flex flex-col justify-center ${contentClassName}`.trim()}
       >
         <div className={`w-full flex ${selectedPosition} transition-all duration-300`}>
           {/* Render custom children or default HeroCard with cardProps */}

@@ -1,6 +1,6 @@
 export const featuresContent = {
   tagline: "WHY CHOOSE KINGLEO TATTOOZ INSTITUTE?",
-  heading: "At Kingleo, We Fix What Other Schools Ignore",
+  heading: "At Kingleo, We Fix What Other Institute Ignore",
   items: [
     {
       title: "Learn By Doing, Master By Experience",

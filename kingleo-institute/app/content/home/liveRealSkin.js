@@ -7,7 +7,7 @@ export const liveRealSkinContent = {
   tagline: "LIVE REAL SKIN",
   heading: "Work By Our Students\nOn Real Bodies",
   description:
-    "These tattoos were created by our students on live skin inside a real studio — hands on training under pro artist mentorship.",
+    "These tattoos were created by our students on live skin inside a real studio hands on training under pro artist mentorship.",
   images: [
     {
       image: "/home/live-real-skin/ashutoush Bairagi.webp",

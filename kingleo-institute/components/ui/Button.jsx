@@ -26,12 +26,16 @@ export default function Button({
   const content = label || children;
 
   const baseStyles =
-    "inline-flex items-center justify-center font-medium rounded-full h-10 md:h-12 text-xs sm:text-sm transition-all duration-300 select-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-white/20 active:scale-[0.98]";
+    "group relative overflow-hidden inline-flex items-center justify-center font-medium backdrop-blur-xl shadow-[inset_0_1px_0_rgba(255,255,255,0.35)] rounded-xl h-10 md:h-12 text-xs sm:text-sm transition-all duration-300 select-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-white/20 active:scale-[0.98]";
 
   const variantStyles = {
     // Frosted glass button
     frosted:
       "bg-white/[0.12] hover:bg-white/[0.20] text-white border border-white/25 backdrop-blur-md shadow-[0_4px_16px_rgba(0,0,0,0.2)] hover:border-white/40",
+
+    // Glassy button: translucent gradient, blur, inner highlight
+    glass:
+      "bg-gradient-to-b from-white/25 to-white/5 hover:from-white/35 hover:to-white/10 text-white border border-white/30 hover:border-white/50 backdrop-blur-xl shadow-[inset_0_1px_0_rgba(255,255,255,0.45),0_8px_24px_rgba(0,0,0,0.35)]",
 
     // WhatsApp button
     whatsapp:
@@ -80,19 +84,29 @@ export default function Button({
 
   const buttonInner = (
     <>
+      {/* Glassy effect: top gloss highlight + hover shine sweep */}
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 h-1/2 rounded-t-xl bg-gradient-to-b from-white/25 to-transparent"
+      />
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-y-0 -left-full w-1/2 -skew-x-12 bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-[400%]"
+      />
+
       {/* Left Icon */}
       {icon && iconPosition === "left" && (
-        <span className="mr-2 inline-flex shrink-0 items-center justify-center rounded-full bg-white/15 p-1.5 md:p-2 shadow-[0_0_10px_rgba(255,255,255,0.15)]">
+        <span className="relative mr-2 inline-flex shrink-0 items-center justify-center rounded-full bg-white/15 p-1.5 md:p-2 shadow-[0_0_10px_rgba(255,255,255,0.15)]">
           {icon}
         </span>
       )}
 
       {/* Button Text */}
-      <span>{content}</span>
+      <span className="relative">{content}</span>
 
       {/* Right Icon */}
       {icon && iconPosition === "right" && (
-        <span className="ml-2 inline-flex shrink-0 items-center justify-center">
+        <span className="relative ml-2 inline-flex shrink-0 items-center justify-center">
           {icon}
         </span>
       )}

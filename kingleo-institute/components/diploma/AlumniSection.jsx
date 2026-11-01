@@ -20,12 +20,12 @@ export default function AlumniSection({
   description = "Meet our successful academy graduates working as professional tattoo artists, running their own independent tattoo setups, and creating stunning artwork across top studios.",
   images = [],
   speed = 0.8,
-  repeat = 3,
+  repeat = 10,
   className = "",
 }) {
   return (
     <section
-      className={`w-full bg-white text-black py-12 sm:py-16 lg:py-20 overflow-hidden select-none ${className}`.trim()}
+      className={`w-full bg-white text-black pt-12 lg:pt-20 overflow-hidden select-none ${className}`.trim()}
     >
       {/* Left-Aligned Section Header */}
       <div className="mx-auto max-w-7xl px-5 sm:px-8 mb-8 sm:mb-10 lg:mb-12 text-left flex flex-col items-start">
@@ -73,7 +73,11 @@ export default function AlumniSection({
         cardWidth="w-[260px] sm:w-[300px] lg:w-[320px]"
         cardHeight="h-[370px] sm:h-[430px] lg:h-[470px]"
         rounded=""
-        gap="gap-4 sm:gap-5"
+        spacing="pr-2"
+        overlay="soft"
+        batchClass="text-[9.5px] sm:text-[10.5px] font-semibold tracking-[0.13em] text-white"
+        nameClass="text-[15px] sm:text-base"
+        roleClass="text-xs sm:text-[13px] text-white"
       />
     </section>
   );

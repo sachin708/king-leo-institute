@@ -31,7 +31,7 @@ export default function ChatBotModal({
   onClose,
   instituteName = "Kingleo Institute",
   logoSrc = "/icons/Kinglio-back.jpg",
-  whatsappNumber = "919584228615",
+  whatsappNumber = "919343623234",
   phoneNumber = "+91 95842 28615",
 }) {
   const [messages, setMessages] = useState(INITIAL_MESSAGES);

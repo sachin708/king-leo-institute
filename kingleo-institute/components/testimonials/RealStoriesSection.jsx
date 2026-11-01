@@ -2,7 +2,6 @@
 
 import React from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import AutoScroll from "embla-carousel-auto-scroll";
 import Tagline from "@/components/ui/Tagline";
 import Heading from "@/components/ui/Heading";
 
@@ -12,11 +11,11 @@ import Heading from "@/components/ui/Heading";
  */
 function StarRating({ rating = 5 }) {
   return (
-    <div className="flex items-center gap-1" aria-label={`${rating} out of 5 stars`}>
+    <div className="flex items-center gap-0.5 shrink-0" aria-label={`${rating} out of 5 stars`}>
       {[...Array(5)].map((_, i) => (
         <svg
           key={i}
-          className={`w-4 h-4 ${i < rating
+          className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${i < rating
             ? "text-amber-400 fill-amber-400"
             : "text-zinc-300 fill-transparent stroke-current stroke-2"
             }`}
@@ -30,45 +29,81 @@ function StarRating({ rating = 5 }) {
   );
 }
 
+function Avatar({ name, avatar }) {
+  const initials = name
+    .split(" ")
+    .map((w) => w[0])
+    .slice(0, 2)
+    .join("")
+    .toUpperCase();
+  return (
+    <div className="relative size-12 sm:size-14 shrink-0 rounded-full overflow-hidden bg-zinc-900 text-white flex items-center justify-center text-sm sm:text-base font-semibold">
+      {avatar ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img src={avatar} alt={name} className="size-full object-cover" />
+      ) : (
+        <span aria-hidden="true">{initials}</span>
+      )}
+    </div>
+  );
+}
+
+function ArrowButton({ direction, onClick, label }) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-label={label}
+      className="size-10 sm:size-11 rounded-full border border-zinc-400 bg-white text-black flex items-center justify-center hover:bg-black hover:text-white hover:border-black transition-colors cursor-pointer"
+    >
+      <svg
+        viewBox="0 0 24 24"
+        className={`size-5 fill-none stroke-current stroke-2 ${direction === "next" ? "" : "rotate-180"}`}
+        aria-hidden="true"
+      >
+        <path d="M9 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    </button>
+  );
+}
+
 /**
  * Real Stories From Real Artists Section
- * - White background with black typography
- * - Centered header matching reference screenshots
- * - Continuous auto-scroll testimonial carousel
- * - Clean cards featuring quote icons, star ratings, review text, student name & city
+ * - Centered header + focused testimonial carousel (active card highlighted)
+ * - Prev/next arrows and dot pagination below
+ * - Cards: avatar, name, city, stars, quote icon, review, name & city footer
+ * - Responsive: 1 card on mobile, 3 on desktop with peeking neighbours
+ * - Optional `avatar` per story shows a photo, otherwise initials
  */
 export default function RealStoriesSection({
   tagline = "REAL STORIES",
   heading = "Real Stories\nFrom Real Artists",
   stories = [],
-  speed = 0.8,
-  repeat = 3,
   className = "",
 }) {
-  const [emblaRef] = useEmblaCarousel(
-    {
-      loop: true,
-      dragFree: true,
-      align: "start",
-    },
-    [
-      AutoScroll({
-        speed,
-        startDelay: 0,
-        stopOnInteraction: false,
-        stopOnMouseEnter: false,
-      }),
-    ]
-  );
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true,
+    align: "center",
+  });
+  const [selected, setSelected] = React.useState(0);
+
+  React.useEffect(() => {
+    if (!emblaApi) return;
+    const onSelect = () => setSelected(emblaApi.selectedScrollSnap());
+    onSelect();
+    emblaApi.on("select", onSelect);
+    emblaApi.on("reInit", onSelect);
+    return () => {
+      emblaApi.off("select", onSelect);
+      emblaApi.off("reInit", onSelect);
+    };
+  }, [emblaApi]);
 
   if (!stories.length) return null;
 
-  // Repeat for continuous seamless infinite loop across all viewports
-  const slides = Array.from({ length: repeat }, () => stories).flat();
-
   return (
     <section
-      className={`w-full bg-white text-black py-14 sm:py-18 lg:py-24 overflow-hidden select-none ${className}`.trim()}
+      className={`w-full bg-white text-black py-12 lg:py-20 overflow-hidden select-none ${className}`.trim()}
     >
       {/* Centered Section Header */}
       <div className="mx-auto max-w-7xl px-5 sm:px-8 mb-10 sm:mb-12 lg:mb-16 text-center flex flex-col items-center">
@@ -97,51 +132,82 @@ export default function RealStoriesSection({
         />
       </div>
 
-      {/* Embla Testimonial Carousel Track */}
-      <div className="relative w-full overflow-hidden">
-        <div
-          ref={emblaRef}
-          className="overflow-hidden cursor-grab active:cursor-grabbing px-4 sm:px-6"
-        >
-          <div className="flex gap-5 sm:gap-6">
-            {slides.map((story, index) => (
+      {/* Carousel */}
+      <div ref={emblaRef} className="overflow-hidden cursor-grab active:cursor-grabbing">
+        <div className="flex touch-pan-y py-4">
+          {stories.map((story, index) => {
+            const active = index === selected;
+            return (
               <div
                 key={`${story.name}-${index}`}
-                className="relative isolate w-[280px] sm:w-[320px] lg:w-[360px] min-h-[280px] sm:min-h-[295px] shrink-0 rounded-2xl border border-zinc-200/90 shadow-sm hover:shadow-md hover:border-zinc-300 transition-all duration-300 bg-white p-6 sm:p-7 flex flex-col justify-between"
+                className="shrink-0 grow-0 basis-[85%] sm:basis-[60%] md:basis-[44%] lg:basis-[30%] px-2 sm:px-3"
               >
-                <div>
-                  {/* Top Quote Icon & Star Rating */}
-                  <div className="flex items-center justify-between mb-2">
+                <div
+                  className={`h-full min-h-[300px] sm:min-h-[320px] rounded-2xl bg-white p-5 sm:p-6 flex flex-col justify-between border-2 transition-all duration-300 ${
+                    active
+                      ? "border-black shadow-xl"
+                      : "border-zinc-200 shadow-sm scale-[0.97] opacity-80"
+                  }`}
+                >
+                  <div>
+                    {/* Avatar, name/city, stars */}
+                    <div className="flex items-center gap-3">
+                      <Avatar name={story.name} avatar={story.avatar} />
+                      <div className="min-w-0 flex-1">
+                        <h4 className="font-bold text-black text-base sm:text-lg leading-tight truncate">
+                          {story.name}
+                        </h4>
+                        <p className="text-neutral-500 text-sm truncate">{story.location}</p>
+                      </div>
+                      <StarRating rating={story.rating} />
+                    </div>
+
+                    {/* Quote icon */}
                     <svg
-                      className="w-7 h-7 text-zinc-400 fill-current"
+                      className="mt-5 w-7 h-7 text-zinc-500 fill-current"
                       viewBox="0 0 24 24"
                       aria-hidden="true"
                     >
                       <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                     </svg>
 
-                    <StarRating rating={story.rating} />
+                    <p className="mt-3 text-zinc-800 text-sm sm:text-[15px] leading-relaxed">
+                      &ldquo;{story.review}&rdquo;
+                    </p>
                   </div>
 
-                  {/* Review Text */}
-                  <p className="mt-4 text-zinc-700 text-sm sm:text-[15px] leading-relaxed font-normal">
-                    &ldquo;{story.review}&rdquo;
-                  </p>
-                </div>
-
-                {/* Bottom Student Details */}
-                <div className="mt-6 pt-4 border-t border-zinc-200/80">
-                  <h4 className="font-bold text-black text-base tracking-tight leading-snug">
-                    {story.name}
-                  </h4>
-                  <p className="text-neutral-500 text-xs sm:text-sm mt-0.5">
-                    {story.location}
-                  </p>
+                  <div className="mt-5 pt-4 border-t border-zinc-200">
+                    <h5 className="font-bold text-black text-sm sm:text-base leading-snug">
+                      {story.name}
+                    </h5>
+                    <p className="text-neutral-500 text-xs sm:text-sm mt-0.5">{story.location}</p>
+                  </div>
                 </div>
               </div>
-            ))}
-          </div>
+            );
+          })}
         </div>
+      </div>
+
+      {/* Controls */}
+      <div className="mt-6 sm:mt-8 px-4 flex items-center justify-center gap-3 sm:gap-6">
+        <ArrowButton direction="prev" label="Previous story" onClick={() => emblaApi?.scrollPrev()} />
+        <div className="flex items-center gap-1.5 sm:gap-2" role="tablist" aria-label="Story pagination">
+          {stories.map((story, i) => (
+            <button
+              key={`${story.name}-dot-${i}`}
+              type="button"
+              role="tab"
+              aria-selected={i === selected}
+              aria-label={`Go to story ${i + 1}`}
+              onClick={() => emblaApi?.scrollTo(i)}
+              className={`size-2 sm:size-2.5 rounded-full transition-colors cursor-pointer ${
+                i === selected ? "bg-black" : "bg-zinc-300 hover:bg-zinc-400"
+              }`}
+            />
+          ))}
+        </div>
+        <ArrowButton direction="next" label="Next story" onClick={() => emblaApi?.scrollNext()} />
       </div>
     </section>
   );

@@ -7,7 +7,7 @@ export const awardsContent = {
   tagline: "AWARDS & ACHIEVEMENTS",
   heading: "Award Winning\nMentors\nRecognition That\nSpeaks",
   description:
-    "Honours that mark our mentors and studio — the standard every Kingleo artist is trained to meet.",
+    "Honours that mark our mentors and studio the standard every Kingleo artist is trained to meet.",
   desktopImage: "/home/awards-achievements/desktop.webp",
   mobileImage: "/home/awards-achievements/mobile.webp",
   imageAlt:

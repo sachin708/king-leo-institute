@@ -18,7 +18,7 @@ export default function FeatureSection({
   numberColor = "text-neutral-400",
   dividerColor = "border-black/15",
   titleSize = "text-xl lg:text-[22px] xl:text-[26px]",
-  descriptionSize = "text-sm md:text-base lg:text-[15px] xl:text-[17px]",
+  descriptionSize = "text-sm md:text-base lg:text-[14px] xl:text-[15px]",
   margin = "",
   className = "",
 }) {
@@ -28,7 +28,7 @@ export default function FeatureSection({
     <section
       className={`w-full ${background} ${textColor} ${margin} ${className}`.trim()}
     >
-      <div className="mx-auto max-w-7xl px-5 py-12 sm:px-8 lg:py-20">
+      <div className="mx-auto max-w-7xl px-5 pt-12 sm:px-8 lg:pt-20">
         <SectionHeader
           tagline={tagline}
           heading={heading}
@@ -36,7 +36,7 @@ export default function FeatureSection({
           {...headerProps}
         />
 
-        <ul className="mt-12 grid grid-cols-1 lg:mt-20 lg:grid-cols-4">
+        <ul className="mt-6 grid grid-cols-1 lg:mt-20 lg:grid-cols-4">
           {items.map((item, i) => (
             <li
               key={item.title}
@@ -46,11 +46,11 @@ export default function FeatureSection({
                   : ""
               }`}
             >
-              <span
+              {/* <span
                 className={`block text-sm font-semibold tracking-widest ${numberColor}`}
               >
                 {String(i + 1).padStart(2, "0")}
-              </span>
+              </span> */}
               <h3
                 className={`mt-6 font-bold uppercase leading-snug lg:mt-10 ${titleSize}`}
               >

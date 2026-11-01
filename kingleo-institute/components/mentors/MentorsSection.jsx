@@ -20,8 +20,8 @@ export default function MentorsSection({
   heading = "Learn From\nPro Artists",
   description = "Direct mentorship inside a real studio from artists with years of professional tattoo industry experience.",
   mentors = [],
-  speed = 0.8,
-  repeat = 3,
+  speed = 0.4,
+  repeat = Infinity,
   className = "",
 }) {
   const [emblaRef] = useEmblaCarousel(
@@ -47,7 +47,7 @@ export default function MentorsSection({
 
   return (
     <section
-      className={`w-full bg-white text-black py-8 sm:py-10 lg:py-12 overflow-hidden select-none ${className}`.trim()}
+      className={`w-full bg-white text-black pt-6 lg:pt-20 overflow-hidden select-none ${className}`.trim()}
     >
       {/* Section Header: Uses Tagline (small heading), Heading, and Description components */}
       <div className="mx-auto max-w-7xl px-5 sm:px-8 mb-6 sm:mb-8 text-center flex flex-col items-center">
@@ -88,11 +88,15 @@ export default function MentorsSection({
       <div className="relative w-full">
         {/* Embla Viewport */}
         <div ref={emblaRef} className="overflow-hidden cursor-grab active:cursor-grabbing px-4 sm:px-6">
-          <div className="flex gap-4 sm:gap-5">
+          {/* Spacing uses per-slide padding (not flex gap) so Embla's loop keeps equal spacing at the wrap-around seam */}
+          <div className="flex -ml-4 md:-ml-2">
             {slides.map((mentor, index) => (
               <div
                 key={`${mentor.name}-${index}`}
-                className="relative isolate w-[260px] sm:w-[300px] lg:w-[320px] h-[380px] sm:h-[440px] lg:h-[480px] shrink-0 overflow-hidden border border-zinc-200/80 shadow-md group bg-zinc-900"
+                className="shrink-0 grow-0 pl-2 md:pl-2"
+              >
+              <div
+                className="relative isolate w-[260px] sm:w-[300px] lg:w-[320px] h-[400px] sm:h-[460px] lg:h-[480px] overflow-hidden border border-zinc-200/80 shadow-md group bg-zinc-900"
               >
                 {/* Mentor Photo */}
                 <Image
@@ -103,14 +107,14 @@ export default function MentorsSection({
                   className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
                 />
 
-                {/* Bottom Dark Gradient Overlay */}
+                {/* Slight Bottom Gradient Overlay */}
                 <div
                   aria-hidden="true"
-                  className="absolute inset-0 z-10 bg-gradient-to-t from-black/95 via-black/45 to-transparent pointer-events-none"
+                  className="absolute inset-0 z-10 bg-gradient-to-t from-black/60 via-black/15 to-transparent pointer-events-none"
                 />
 
                 {/* Content Inside Image: Uses Tagline (small heading), Heading, and Description */}
-                <div className="absolute inset-x-0 bottom-0 z-20 flex flex-col items-start p-5 sm:p-6 pointer-events-none">
+                <div className="absolute inset-x-0 bottom-0 z-20 flex flex-col items-start p-5 sm:p-6 pointer-events-none drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">
                   {/* Small heading (experience / badge) */}
                   {mentor.experience && (
                     <Tagline
@@ -147,6 +151,7 @@ export default function MentorsSection({
                     />
                   )}
                 </div>
+              </div>
               </div>
             ))}
           </div>
