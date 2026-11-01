@@ -14,7 +14,7 @@ export const diplomaContent = {
       title: "360° Tattoo Training Learning Program",
       description:
         "The KINGLEO Legend Protocol builds 4 pillars at once, Your Art, Your Hand, Your Business, and Your Brand with art mastery, live real skin training, business development and luxury brand building to make you a complete artist to entrepreneur.",
-      cta: { label: "Know More", href: "#" },
+      cta: { label: "Know More", href: "/programs/360-tattoo-training" },
     },
     {
       title: "Expert Training Mentor",

@@ -33,7 +33,7 @@ export default function ArtistJourneySection({
       label: "BOOK FREE ORIENTATION",
       iconType: "calendar",
       variant: "dark",
-      href: "https://wa.me/919343623234?text=Hi%20Kingleo%20Tattooz%2C%20I%20want%20to%20book%20a%20free%20orientation%20for%20the%20tattoo%20artist%20program",
+      href: "/contact",
     },
     {
       label: "BOOK ON CALL",
@@ -136,7 +136,7 @@ export default function ArtistJourneySection({
 
           {/* Main Heading */}
           {heading && (
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-bold text-white tracking-tight leading-[1.14] whitespace-pre-line mb-3 sm:mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-bold text-white tracking-tight leading-[1.14] whitespace-pre-line mb-3 sm:mb-4">
               {heading}
             </h2>
           )}

@@ -51,7 +51,7 @@ export const heroContent = {
     {
       label: "Book Your Free Consultation",
       variant: "frosted",
-      href: "#consultation",
+      href: "/contact",
       fullWidth: true,
     },
     {

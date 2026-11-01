@@ -42,7 +42,6 @@ export const footerContent = {
             { label: "Live Real Skin", href: "#live-real-skin" },
             { label: "Passout Students", href: "#alumni" },
             { label: "About", href: "#about" },
-            { label: "Contact", href: "#contact" },
           ],
         },
         {
@@ -60,7 +59,7 @@ export const footerContent = {
         {
           title: "Training Facility",
           links: [
-            { label: "360° Tattoo Training", href: "#" },
+            { label: "360° Tattoo Training", href: "/programs/360-tattoo-training" },
             { label: "Expert Training Mentor", href: "#mentors" },
             { label: "Safety First Protocol", href: "#" },
             { label: "Certified Courses", href: "#" },
@@ -85,4 +84,25 @@ export const footerContent = {
     { type: "pinterest", label: "Pinterest", href: "https://www.pinterest.com/" },
   ],
   copyright: "© 2026 Kingleo Tattooz. All rights reserved.",
+};
+
+/**
+ * Footer for pages other than home: in-page anchors (#awards, ...) become
+ * "/#awards" so they navigate back to the home page sections.
+ */
+export const subPageFooterContent = {
+  ...footerContent,
+  columns: footerContent.columns.map((col) => ({
+    ...col,
+    groups: col.groups.map((group) => ({
+      ...group,
+      links: group.links.map((link) => ({
+        ...link,
+        href:
+          link.href.startsWith("#") && link.href.length > 1
+            ? `/${link.href}`
+            : link.href,
+      })),
+    })),
+  })),
 };

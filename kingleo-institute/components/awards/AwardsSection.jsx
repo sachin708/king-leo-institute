@@ -50,6 +50,7 @@ export default function AwardsSection({
 
   return (
     <section
+      id="awards"
       className={`w-full bg-white text-black pt-6 lg:pt-20 overflow-hidden select-none ${className}`.trim()}
     >
       <div className="w-full flex flex-col items-center">

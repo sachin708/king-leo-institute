@@ -83,3 +83,7 @@ body {
     min-height: 175vh;
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}

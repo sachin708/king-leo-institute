@@ -76,7 +76,7 @@ export default function MentorsSection({
         {description && (
           <Description
             text={description}
-            fontSize="text-sm sm:text-base"
+            fontSize="text-sm md:text-base lg:text-[17px]"
             color="text-neutral-700"
             maxWidth="max-w-2xl"
             className="mt-3"

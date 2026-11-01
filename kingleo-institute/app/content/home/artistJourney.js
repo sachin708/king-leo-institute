@@ -21,7 +21,7 @@ export const artistJourneyContent = {
       label: "BOOK YOUR FREE CONSULTATION",
       // iconType: "calendar",
       variant: "frosted",
-      href: "https://wa.me/919343623234?text=Hi%20Kingleo%20Tattooz%2C%20I%20want%20to%20book%20a%20free%20orientation%20for%20the%20tattoo%20artist%20program",
+      href: "/contact",
     },
     {
       label: "BOOK ON CALL",

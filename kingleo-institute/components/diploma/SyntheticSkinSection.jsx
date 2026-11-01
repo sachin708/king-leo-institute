@@ -24,6 +24,7 @@ export default function SyntheticSkinSection({
 }) {
   return (
     <section
+      id="synthetic-skin"
       className={`w-full bg-white text-black pt-12 lg:pt-20 overflow-hidden select-none ${className}`.trim()}
     >
       {/* Left-Aligned Section Header */}

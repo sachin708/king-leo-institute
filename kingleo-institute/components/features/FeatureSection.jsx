@@ -26,6 +26,7 @@ export default function FeatureSection({
 
   return (
     <section
+      id="about"
       className={`w-full ${background} ${textColor} ${margin} ${className}`.trim()}
     >
       <div className="mx-auto max-w-7xl px-5 pt-12 sm:px-8 lg:pt-20">

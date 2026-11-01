@@ -123,7 +123,7 @@ export default function RealStoriesSection({
           text={heading}
           fontFamily="font-sans"
           fontWeight="font-bold"
-          fontSize="text-4xl sm:text-5xl md:text-6xl lg:text-[64px]"
+          fontSize="text-3xl sm:text-4xl md:text-5xl lg:text-[52px]"
           lineHeight="leading-tight sm:leading-[1.08]"
           letterSpacing="tracking-tight"
           color="text-black"

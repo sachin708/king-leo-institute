@@ -17,6 +17,7 @@ export default function HeroSection({
   imageAlt = "Kingleo Tattoo Studio Indore",
   cardPosition = "left", // 'left' | 'right' | 'center'
   cardProps = {},
+  showOverlay = true,
   showSocialSidebar = true,
   socialLinks = [],
   className = "",
@@ -66,7 +67,9 @@ export default function HeroSection({
             className="object-cover object-top"
           />
           {/* Mobile dark gradient overlay from bottom */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/85 pointer-events-none" />
+          {showOverlay && (
+            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/85 pointer-events-none" />
+          )}
         </div>
       </div>
 
