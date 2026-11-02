@@ -6,7 +6,7 @@ import SectionHeader from "@/components/ui/SectionHeader";
 
 /**
  * FAQ Section - white background, black text, whitish cards with black border.
- * One answer open at a time; the first is open by default.
+ * One answer open at a time; all are closed until clicked.
  */
 export default function FaqSection({
   tagline,
@@ -14,7 +14,7 @@ export default function FaqSection({
   items = [],
   className = "",
 }) {
-  const [openIndex, setOpenIndex] = useState(0);
+  const [openIndex, setOpenIndex] = useState(-1);
 
   if (!items.length) return null;
 

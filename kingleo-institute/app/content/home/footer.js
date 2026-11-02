@@ -47,9 +47,9 @@ export const footerContent = {
         {
           title: "Our Initiatives",
           links: [
-            { label: "Internship and Career Support", href: "#" },
-            { label: "Easy Fee Payment", href: "#" },
-            { label: "Lifetime Accessibility", href: "#" },
+            { label: "Internship and Career Support", href: "/programs/internship-and-career-support" },
+            { label: "Easy Fee Payment", href: "/programs/easy-fee-payment" },
+            { label: "Lifetime Accessibility", href: "/programs/lifetime-accessibility" },
           ],
         },
       ],
@@ -60,9 +60,9 @@ export const footerContent = {
           title: "Training Facility",
           links: [
             { label: "360° Tattoo Training", href: "/programs/360-tattoo-training" },
-            { label: "Expert Training Mentor", href: "#mentors" },
-            { label: "Safety First Protocol", href: "#" },
-            { label: "Certified Courses", href: "#" },
+            { label: "Expert Training Mentor", href: "/programs/expert-training-mentor" },
+            { label: "Safety First Protocol", href: "/programs/safety-first-protocol" },
+            { label: "Certified Courses", href: "/programs/certified-courses" },
           ],
         },
         {

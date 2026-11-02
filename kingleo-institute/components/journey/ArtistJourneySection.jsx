@@ -53,6 +53,7 @@ export default function ArtistJourneySection({
     "LIVE REAL SKIN",
     "INDUSTRY DIPLOMA",
   ],
+  fixedBackground = true, // false: image scrolls with the section instead of staying fixed
   className = "",
 }) {
   const desktopImg = images?.desktop || "/home/artist-journey/desktop.webp";
@@ -76,15 +77,23 @@ export default function ArtistJourneySection({
     <section
       id="contact"
       aria-label="Artist Journey"
-      className={`cta-journey relative z-[1] w-full min-h-[175vh] md:min-h-[145vh] flex flex-col justify-start text-white [clip-path:inset(0px)] ${className}`.trim()}
-      style={{ clipPath: "inset(0px)", WebkitClipPath: "inset(0px)" }}
+      className={`${
+        fixedBackground
+          ? "cta-journey min-h-[175vh] md:min-h-[145vh] [clip-path:inset(0px)]"
+          : "min-h-[760px] md:min-h-[720px] overflow-hidden"
+      } relative z-[1] w-full flex flex-col justify-start text-white ${className}`.trim()}
+      style={fixedBackground ? { clipPath: "inset(0px)", WebkitClipPath: "inset(0px)" } : undefined}
     >
       {/* 
         Fixed Parallax Background:
         Clipped within this section by clip-path: inset(0px).
         Stays locked to the viewport while user scrolls through the 175vh height.
       */}
-      <div className="fixed inset-0 w-full h-full pointer-events-none z-0">
+      <div
+        className={`${
+          fixedBackground ? "fixed" : "absolute"
+        } inset-0 w-full h-full pointer-events-none z-0`}
+      >
         {/* Desktop Image (md and up) */}
         <div
           className="hidden md:block absolute inset-0 w-full h-full bg-cover bg-no-repeat"

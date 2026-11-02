@@ -67,7 +67,7 @@ export default function Button({
    * Desktop (lg) = 70%
    */
   const widthStyle = fullWidth
-    ? "w-full lg:w-[80%]"
+    ? "w-full lg:w-[90%]"
     : "w-auto";
 
   const disabledStyle = disabled

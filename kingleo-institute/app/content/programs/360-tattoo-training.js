@@ -19,7 +19,7 @@ export const program360Content = {
     buttons: [
       {
         label: "Book You Free Consultation",
-        iconType: "calendar",
+        // iconType: "calendar",
         variant: "frosted",
         href: "/contact",
       },
@@ -191,8 +191,4 @@ export const program360Content = {
       },
     ],
   },
-};
-
-export const programs = {
-  "360-tattoo-training": program360Content,
 };

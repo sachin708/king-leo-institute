@@ -6,6 +6,9 @@ import Navbar from "@/components/layout/Navbar";
 import MenuModal from "@/components/layout/MenuModal";
 import HeroSection from "@/components/hero/HeroSection";
 import HeroCard from "@/components/hero/HeroCard";
+import CourseInfoCard from "@/components/programs/CourseInfoCard";
+import PiercingSection from "@/components/programs/PiercingSection";
+import FeeBreakdownSection from "@/components/programs/FeeBreakdownSection";
 import ModulesSection from "@/components/programs/ModulesSection";
 import FaqSection from "@/components/programs/FaqSection";
 import ArtistJourneySection from "@/components/journey/ArtistJourneySection";
@@ -28,7 +31,7 @@ const buttonIcons = {
  */
 export default function ProgramPage({ content }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { hero, modules, faqs } = content;
+  const { hero, courseInfo, piercing, feeBreakdown, modules, faqs } = content;
 
   const heroButtons = hero.buttons.map((btn) => ({
     ...btn,
@@ -59,6 +62,7 @@ export default function ProgramPage({ content }) {
         imageAlt={hero.images.alt}
         cardPosition="left"
         showOverlay={false}
+        fixedBackground
         showSocialSidebar={false}
       >
         <HeroCard
@@ -101,11 +105,17 @@ export default function ProgramPage({ content }) {
         </HeroCard>
       </HeroSection>
 
+      {courseInfo && <CourseInfoCard {...courseInfo} />}
+
+      {piercing && <PiercingSection {...piercing} />}
+
+      {feeBreakdown && <FeeBreakdownSection {...feeBreakdown} />}
+
       <ModulesSection {...modules} />
 
       <FaqSection {...faqs} />
 
-      <ArtistJourneySection {...artistJourneyContent} />
+      <ArtistJourneySection {...artistJourneyContent} fixedBackground={false} />
 
       <Footer {...subPageFooterContent} />
 

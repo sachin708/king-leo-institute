@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import ProgramPage from "@/components/programs/ProgramPage";
-import { programs } from "@/app/content/programs/360-tattoo-training";
+import { programs } from "@/app/content/programs";
 
 export function generateStaticParams() {
   return Object.keys(programs).map((slug) => ({ slug }));

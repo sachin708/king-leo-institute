@@ -18,6 +18,7 @@ export default function HeroSection({
   cardPosition = "left", // 'left' | 'right' | 'center'
   cardProps = {},
   showOverlay = true,
+  fixedBackground = false, // desktop image stays fixed while the page scrolls past it
   showSocialSidebar = true,
   socialLinks = [],
   className = "",
@@ -37,10 +38,14 @@ export default function HeroSection({
   return (
     <section
       className={`relative w-full md:min-h-screen flex flex-col md:justify-between overflow-hidden bg-black md:bg-transparent pt-20 sm:pt-24 md:pt-0 text-white ${className}`.trim()}
-      style={style}
+      style={fixedBackground ? { clipPath: "inset(0px)", WebkitClipPath: "inset(0px)", ...style } : style}
     >
       {/* Background Images: Desktop (full-bleed behind card) vs Mobile (stacked above card) */}
-      <div className="relative md:absolute md:inset-0 z-0">
+      <div
+        className={`relative ${
+          fixedBackground ? "md:fixed" : "md:absolute"
+        } md:inset-0 z-0`}
+      >
         {/* Desktop Image (Screen md and above) */}
         <div className="hidden md:block relative w-full h-full">
           <Image

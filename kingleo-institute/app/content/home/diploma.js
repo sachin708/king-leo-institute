@@ -20,37 +20,37 @@ export const diplomaContent = {
       title: "Expert Training Mentor",
       description:
         "Learn from mentors with 16 years of real studio experience. Their expertise in thousands of tattoos, client handling and flawless execution will guide you to become a successful tattoo artist.",
-      cta: { label: "Know More", href: "#" },
+      cta: { label: "Know More", href: "/programs/expert-training-mentor" },
     },
     {
       title: "Certified Courses",
       description:
         "Train at Indore's only EBVTR Authorised studio. Earn a globally respected certificate that validates your artistry and hospital grade safety standards across India.",
-      cta: { label: "Know More", href: "#" },
+      cta: { label: "Know More", href: "/programs/certified-courses" },
     },
     {
       title: "Internship and Career Support",
       description:
         "Top performers get a 6 month paid internship and in house placement. Learn our exclusive 1 to 10 Business Model with complete soft skills, hard skills and business training.",
-      cta: { label: "Know More", href: "#" },
+      cta: { label: "Know More", href: "/programs/internship-and-career-support" },
     },
     {
       title: "Easy Fee Payment Mode Via Instalments",
       description:
         "Kingleo Tattooz Institute offers easy instalment plans for students. Our flexible payment options ensure your dream career never waits for money.",
-      cta: { label: "Know More", href: "#" },
+      cta: { label: "Know More", href: "/programs/easy-fee-payment" },
     },
     {
       title: "Safety First Protocol",
       description:
         "Safety is our standard. Our studio is secured with CCTV, biometric attendance, medical aid and weekly sanitisation with strict hospital grade hygiene protocols.",
-      cta: { label: "Know More", href: "#" },
+      cta: { label: "Know More", href: "/programs/safety-first-protocol" },
     },
     {
       title: "Lifetime Accessibility",
       description:
         "Course over never means connection over. Get lifetime mentorship, communication support, design feedback and career guidance even after completing your course.",
-      cta: { label: "Know More", href: "#" },
+      cta: { label: "Know More", href: "/programs/lifetime-accessibility" },
     },
     {
       title: "Live Real Skin Training",

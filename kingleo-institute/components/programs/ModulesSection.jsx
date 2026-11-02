@@ -16,6 +16,23 @@ import {
   MessagesSquare,
   GraduationCap,
   Infinity as InfinityIcon,
+  Fingerprint,
+  Cctv,
+  ClipboardList,
+  HeartPulse,
+  Sparkles,
+  Award,
+  MapPin,
+  Briefcase,
+  Wallet,
+  Building2,
+  MessageCircle,
+  Users,
+  Clock,
+  FileText,
+  CalendarCheck,
+  PhoneCall,
+  Compass,
 } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 
@@ -34,6 +51,23 @@ const icons = {
   messages: MessagesSquare,
   "graduation-cap": GraduationCap,
   infinity: InfinityIcon,
+  fingerprint: Fingerprint,
+  cctv: Cctv,
+  "clipboard-list": ClipboardList,
+  "heart-pulse": HeartPulse,
+  sparkles: Sparkles,
+  award: Award,
+  "map-pin": MapPin,
+  briefcase: Briefcase,
+  wallet: Wallet,
+  building: Building2,
+  "message-circle": MessageCircle,
+  users: Users,
+  clock: Clock,
+  "file-text": FileText,
+  "calendar-check": CalendarCheck,
+  "phone-call": PhoneCall,
+  compass: Compass,
 };
 
 /**
@@ -97,6 +131,8 @@ export default function ModulesSection({
   tagline,
   heading,
   description,
+  extraDescription,
+  closing,
   items = [],
   className = "",
 }) {
@@ -112,13 +148,23 @@ export default function ModulesSection({
           tagline={tagline}
           heading={heading}
           description={description}
-          className="max-w-4xl mx-auto mb-8 lg:mb-12"
+          className={`max-w-4xl mx-auto ${extraDescription ? "mb-4" : "mb-8 lg:mb-12"}`}
         />
+        {extraDescription && (
+          <p className="mx-auto mb-8 lg:mb-12 max-w-2xl text-center text-sm md:text-base lg:text-[17px] text-neutral-600 leading-relaxed">
+            {extraDescription}
+          </p>
+        )}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {items.map((item, i) => (
             <ModuleCard key={item.title} item={item} index={i} />
           ))}
         </div>
+        {closing && (
+          <p className="mx-auto mt-12 lg:mt-16 max-w-3xl text-center text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight leading-tight text-black">
+            {closing}
+          </p>
+        )}
       </div>
     </section>
   );
