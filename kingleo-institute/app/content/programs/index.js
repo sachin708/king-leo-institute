@@ -5,6 +5,7 @@ import { certifiedCoursesContent } from "./certified-courses";
 import { internshipCareerContent } from "./internship-and-career-support";
 import { easyFeePaymentContent } from "./easy-fee-payment";
 import { lifetimeAccessibilityContent } from "./lifetime-accessibility";
+import { liveRealSkinContent } from "./live-real-skin-training";
 
 /** Slug → page content for /programs/[slug] */
 export const programs = {
@@ -15,4 +16,5 @@ export const programs = {
   "internship-and-career-support": internshipCareerContent,
   "easy-fee-payment": easyFeePaymentContent,
   "lifetime-accessibility": lifetimeAccessibilityContent,
+  "live-real-skin-training": liveRealSkinContent,
 };

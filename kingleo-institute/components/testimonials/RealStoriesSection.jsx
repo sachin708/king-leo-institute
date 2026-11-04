@@ -140,7 +140,7 @@ export default function RealStoriesSection({
             return (
               <div
                 key={`${story.name}-${index}`}
-                className="shrink-0 grow-0 basis-[85%] sm:basis-[60%] md:basis-[44%] lg:basis-[30%] px-2 sm:px-3"
+                className="shrink-0 grow-0 basis-[78%] sm:basis-[54%] md:basis-[40%] lg:basis-[27%] px-2 sm:px-3"
               >
                 <div
                   className={`h-full min-h-[300px] sm:min-h-[320px] rounded-2xl bg-white p-5 sm:p-6 flex flex-col justify-between border-2 transition-all duration-300 ${

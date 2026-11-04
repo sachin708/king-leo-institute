@@ -12,8 +12,8 @@ export const internshipCareerContent = {
     subDescription:
       "Pro level students are selected for internships inside our live working studio. Learn real client handling, how to run a business and pro level communication while artists are tattooing.",
     images: {
-      desktop: "/home/artist-journey/desktop.webp",
-      mobile: "/home/artist-journey/mobile.webp",
+      desktop: "/programs/internship-and-career-support/desktop.webp",
+      mobile: "/programs/internship-and-career-support/mobile.webp",
       alt: "Internship and Career Support - Kingleo Tattooz Institute",
     },
     buttons: [

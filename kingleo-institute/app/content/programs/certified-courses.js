@@ -12,8 +12,8 @@ export const certifiedCoursesContent = {
     subDescription:
       "From pencil to machine, learn everything from sketching and design fundamentals to professional tattooing with hands on training and expert guidance.",
     images: {
-      desktop: "/home/artist-journey/desktop.webp",
-      mobile: "/home/artist-journey/mobile.webp",
+      desktop: "/programs/certified-courses/desktop.webp",
+      mobile: "/programs/certified-courses/mobile.webp",
       alt: "Certified Courses - Kingleo Tattooz Institute",
     },
     buttons: [

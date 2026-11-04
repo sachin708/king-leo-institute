@@ -12,8 +12,8 @@ export const lifetimeAccessibilityContent = {
     subDescription:
       "At Kingleo, your journey does not end with a certificate. It begins from there. Even after course completion, you stay connected with mentors for life.",
     images: {
-      desktop: "/home/artist-journey/desktop.webp",
-      mobile: "/home/artist-journey/mobile.webp",
+      desktop: "/programs/lifetime-accessibility/desktop.webp",
+      mobile: "/programs/lifetime-accessibility/mobile.webp",
       alt: "Lifetime Accessibility - Kingleo Tattooz Institute",
     },
     buttons: [

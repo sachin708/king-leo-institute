@@ -18,7 +18,7 @@ export default function Navbar({
 }) {
   return (
     <header
-      className={`bg-black/75 backdrop-blur-xl fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 border-b border-white/10 ${className}`.trim()}
+      className={`bg-black/65 backdrop-blur-xl fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 border-b border-white/10 ${className}`.trim()}
       style={style}
     >
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-0 h-20 sm:h-24 flex items-center justify-between">

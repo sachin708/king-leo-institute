@@ -10,6 +10,8 @@ import CourseInfoCard from "@/components/programs/CourseInfoCard";
 import PiercingSection from "@/components/programs/PiercingSection";
 import FeeBreakdownSection from "@/components/programs/FeeBreakdownSection";
 import ModulesSection from "@/components/programs/ModulesSection";
+import HoverCardsSection from "@/components/programs/HoverCardsSection";
+import FeatureCardsSection from "@/components/programs/FeatureCardsSection";
 import FaqSection from "@/components/programs/FaqSection";
 import ArtistJourneySection from "@/components/journey/ArtistJourneySection";
 import Footer from "@/components/layout/Footer";
@@ -31,7 +33,7 @@ const buttonIcons = {
  */
 export default function ProgramPage({ content }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { hero, courseInfo, piercing, feeBreakdown, modules, faqs } = content;
+  const { hero, courseInfo, piercing, feeBreakdown, modules, doubts, features, faqs, theme } = content;
 
   const heroButtons = hero.buttons.map((btn) => ({
     ...btn,
@@ -98,7 +100,7 @@ export default function ProgramPage({ content }) {
           className="md:max-w-[40rem]"
         >
           {hero.subDescription && (
-            <p className="text-xs sm:text-sm md:text-[15px] text-zinc-400 leading-relaxed">
+            <p className="text-xs sm:text-sm md:text-[15px] text-zinc-200 leading-relaxed">
               {hero.subDescription}
             </p>
           )}
@@ -111,9 +113,13 @@ export default function ProgramPage({ content }) {
 
       {feeBreakdown && <FeeBreakdownSection {...feeBreakdown} />}
 
-      <ModulesSection {...modules} />
+      {modules && <ModulesSection {...modules} />}
 
-      <FaqSection {...faqs} />
+      {doubts && <HoverCardsSection {...doubts} />}
+
+      {features && <FeatureCardsSection {...features} />}
+
+      <FaqSection {...faqs} dark={theme === "dark"} />
 
       <ArtistJourneySection {...artistJourneyContent} fixedBackground={false} />
 

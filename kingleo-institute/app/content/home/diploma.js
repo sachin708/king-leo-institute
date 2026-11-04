@@ -56,7 +56,7 @@ export const diplomaContent = {
       title: "Live Real Skin Training",
       description:
         "Shadow expert mentors during live client sessions. Experience real time training in hygiene, client handling and live Q and A with mentors before you ink real skin.",
-      cta: { label: "Know More", href: "#" },
+      cta: { label: "Know More", href: "/programs/live-real-skin-training" },
     },
     {
       title: "Advanced Sketching & Digital Design",

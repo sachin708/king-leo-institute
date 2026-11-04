@@ -12,8 +12,8 @@ export const safetyProtocolContent = {
     subDescription:
       "Learn in a secure, professional and disciplined studio environment with digital attendance, 24/7 camera surveillance and regular HR regularisation.",
     images: {
-      desktop: "/home/artist-journey/desktop.webp",
-      mobile: "/home/artist-journey/mobile.webp",
+      desktop: "/programs/safety-first-protocol/desktop.webp",
+      mobile: "/programs/safety-first-protocol/mobile.webp",
       alt: "Safety First Protocol - Kingleo Tattooz Institute",
     },
     buttons: [

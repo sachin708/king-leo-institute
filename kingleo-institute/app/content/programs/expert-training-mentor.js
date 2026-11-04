@@ -12,8 +12,8 @@ export const expertMentorContent = {
     subDescription:
       "Not a classroom. A real tattoo studio in Indore, where working artists teach you daily, correct your work and shape your career.",
     images: {
-      desktop: "/home/artist-journey/desktop.webp",
-      mobile: "/home/artist-journey/mobile.webp",
+      desktop: "/programs/expert-training-mentor/desktop.webp",
+      mobile: "/programs/expert-training-mentor/mobile.webp",
       alt: "Expert Training Mentor - Kingleo Tattooz Institute",
     },
     buttons: [

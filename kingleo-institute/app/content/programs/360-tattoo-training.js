@@ -12,8 +12,8 @@ export const program360Content = {
     subDescription:
       "Normal courses teach only tattooing. This 360 degree program builds art mastery, hand control, business development and luxury brand building together.",
     images: {
-      desktop: "/home/artist-journey/desktop.webp",
-      mobile: "/home/artist-journey/mobile.webp",
+      desktop: "/programs/360-tattoo-training/desktop.webp",
+      mobile: "/programs/360-tattoo-training/mobile.webp",
       alt: "360° Tattoo Training Learning Program - Kingleo Tattooz Institute",
     },
     buttons: [
