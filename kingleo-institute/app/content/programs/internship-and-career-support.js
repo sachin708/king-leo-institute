@@ -5,7 +5,7 @@
 
 export const internshipCareerContent = {
   hero: {
-    tagline: "DIPLOMA IN TATTOO ART · PAID INTERNSHIP",
+    // tagline: "DIPLOMA IN TATTOO ART · PAID INTERNSHIP",
     heading: "Internship and Career Support",
     description:
       "Top performers get a 6 month paid internship and in house placement. Learn our exclusive 1 to 10 Business Model with complete soft skills, hard skills and business training.",

@@ -2,6 +2,7 @@
 
 import React, { useEffect } from "react";
 import Link from "next/link";
+import { socialUrls } from "@/app/content/socialLinks";
 import {
   ShieldCheck,
   Droplets,
@@ -39,10 +40,10 @@ export default function MenuModal({
   phoneNumbers = ["+91 95842 28615", "+91 70009 24824"],
   email = "kingleotattooz@gmail.com",
   socialLinks = [
-    { name: "Instagram", href: "https://www.instagram.com/kingleotattooz", icon: <InstagramIcon className="w-4 h-4 sm:w-[18px] sm:h-[18px]" /> },
-    { name: "Facebook", href: "https://www.facebook.com/kingleotattooz", icon: <FacebookIcon className="w-4 h-4 sm:w-[18px] sm:h-[18px]" /> },
-    { name: "YouTube", href: "https://www.youtube.com/@kingleotattooz", icon: <YouTubeIcon className="w-4 h-4 sm:w-[18px] sm:h-[18px]" /> },
-    { name: "Pinterest", href: "https://www.pinterest.com/kingleotattooz", icon: <PinterestIcon className="w-4 h-4 sm:w-[18px] sm:h-[18px]" /> },
+    { name: "Instagram", href: socialUrls.instagram, icon: <InstagramIcon className="w-4 h-4 sm:w-[18px] sm:h-[18px]" /> },
+    { name: "Facebook", href: socialUrls.facebook, icon: <FacebookIcon className="w-4 h-4 sm:w-[18px] sm:h-[18px]" /> },
+    { name: "YouTube", href: socialUrls.youtube, icon: <YouTubeIcon className="w-4 h-4 sm:w-[18px] sm:h-[18px]" /> },
+    { name: "Pinterest", href: socialUrls.pinterest, icon: <PinterestIcon className="w-4 h-4 sm:w-[18px] sm:h-[18px]" /> },
   ],
 }) {
   // Lock background scroll when open

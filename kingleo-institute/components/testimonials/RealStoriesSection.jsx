@@ -2,6 +2,7 @@
 
 import React from "react";
 import useEmblaCarousel from "embla-carousel-react";
+import AutoScroll from "embla-carousel-auto-scroll";
 import Tagline from "@/components/ui/Tagline";
 import Heading from "@/components/ui/Heading";
 
@@ -48,58 +49,65 @@ function Avatar({ name, avatar }) {
   );
 }
 
-function ArrowButton({ direction, onClick, label }) {
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      aria-label={label}
-      className="size-10 sm:size-11 rounded-full border border-zinc-400 bg-white text-black flex items-center justify-center hover:bg-black hover:text-white hover:border-black transition-colors cursor-pointer"
-    >
-      <svg
-        viewBox="0 0 24 24"
-        className={`size-5 fill-none stroke-current stroke-2 ${direction === "next" ? "" : "rotate-180"}`}
-        aria-hidden="true"
-      >
-        <path d="M9 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    </button>
-  );
-}
-
 /**
  * Real Stories From Real Artists Section
- * - Centered header + focused testimonial carousel (active card highlighted)
- * - Prev/next arrows and dot pagination below
+ * - Centered header + continuously auto-scrolling, draggable testimonial
+ *   carousel (same logic as the Alumni carousel); no arrows or dots
  * - Cards: avatar, name, city, stars, quote icon, review, name & city footer
- * - Responsive: 1 card on mobile, 3 on desktop with peeking neighbours
+ * - Responsive card widths via basis classes
  * - Optional `avatar` per story shows a photo, otherwise initials
  */
 export default function RealStoriesSection({
   tagline = "REAL STORIES",
   heading = "Real Stories\nFrom Real Artists",
   stories = [],
+  speed = 0.8,
   className = "",
 }) {
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    loop: true,
-    align: "center",
-  });
-  const [selected, setSelected] = React.useState(0);
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    {
+      loop: true,
+      dragFree: true,
+      align: "start",
+    },
+    [
+      AutoScroll({
+        speed,
+        startDelay: 0,
+        stopOnInteraction: false,
+        stopOnMouseEnter: false,
+      }),
+    ]
+  );
 
+  // Keep the marquee moving: restart auto-scroll whenever it stops
+  // (after a drag, a re-init, or the tab regaining focus).
   React.useEffect(() => {
     if (!emblaApi) return;
-    const onSelect = () => setSelected(emblaApi.selectedScrollSnap());
-    onSelect();
-    emblaApi.on("select", onSelect);
-    emblaApi.on("reInit", onSelect);
+    const restart = () => {
+      const autoScroll = emblaApi.plugins().autoScroll;
+      if (autoScroll && !autoScroll.isPlaying()) autoScroll.play(0);
+    };
+    emblaApi.on("pointerUp", restart);
+    emblaApi.on("settle", restart);
+    emblaApi.on("reInit", restart);
+    document.addEventListener("visibilitychange", restart);
+    restart();
     return () => {
-      emblaApi.off("select", onSelect);
-      emblaApi.off("reInit", onSelect);
+      emblaApi.off("pointerUp", restart);
+      emblaApi.off("settle", restart);
+      emblaApi.off("reInit", restart);
+      document.removeEventListener("visibilitychange", restart);
     };
   }, [emblaApi]);
 
   if (!stories.length) return null;
+
+  // Repeat the stories so the loop always has enough slides to wrap seamlessly
+  const slides = Array.from(
+    { length: Math.max(2, Math.ceil(12 / stories.length)) },
+    () => stories
+  ).flat();
 
   return (
     <section
@@ -135,19 +143,14 @@ export default function RealStoriesSection({
       {/* Carousel */}
       <div ref={emblaRef} className="overflow-hidden cursor-grab active:cursor-grabbing">
         <div className="flex touch-pan-y py-4">
-          {stories.map((story, index) => {
-            const active = index === selected;
+          {slides.map((story, index) => {
             return (
               <div
                 key={`${story.name}-${index}`}
                 className="shrink-0 grow-0 basis-[78%] sm:basis-[54%] md:basis-[40%] lg:basis-[27%] px-2 sm:px-3"
               >
                 <div
-                  className={`h-full min-h-[300px] sm:min-h-[320px] rounded-2xl bg-white p-5 sm:p-6 flex flex-col justify-between border-2 transition-all duration-300 ${
-                    active
-                      ? "border-black shadow-xl"
-                      : "border-zinc-200 shadow-sm scale-[0.97] opacity-80"
-                  }`}
+                  className="h-full min-h-[300px] sm:min-h-[320px] rounded-2xl bg-white p-5 sm:p-6 flex flex-col justify-between border-2 border-zinc-200 shadow-sm"
                 >
                   <div>
                     {/* Avatar, name/city, stars */}
@@ -189,26 +192,6 @@ export default function RealStoriesSection({
         </div>
       </div>
 
-      {/* Controls */}
-      <div className="mt-6 sm:mt-8 px-4 flex items-center justify-center gap-3 sm:gap-6">
-        <ArrowButton direction="prev" label="Previous story" onClick={() => emblaApi?.scrollPrev()} />
-        <div className="flex items-center gap-1.5 sm:gap-2" role="tablist" aria-label="Story pagination">
-          {stories.map((story, i) => (
-            <button
-              key={`${story.name}-dot-${i}`}
-              type="button"
-              role="tab"
-              aria-selected={i === selected}
-              aria-label={`Go to story ${i + 1}`}
-              onClick={() => emblaApi?.scrollTo(i)}
-              className={`size-2 sm:size-2.5 rounded-full transition-colors cursor-pointer ${
-                i === selected ? "bg-black" : "bg-zinc-300 hover:bg-zinc-400"
-              }`}
-            />
-          ))}
-        </div>
-        <ArrowButton direction="next" label="Next story" onClick={() => emblaApi?.scrollNext()} />
-      </div>
     </section>
   );
 }

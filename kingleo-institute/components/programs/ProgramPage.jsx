@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import { Phone, CalendarDays } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import MenuModal from "@/components/layout/MenuModal";
 import HeroSection from "@/components/hero/HeroSection";
@@ -15,17 +14,11 @@ import FeatureCardsSection from "@/components/programs/FeatureCardsSection";
 import FaqSection from "@/components/programs/FaqSection";
 import ArtistJourneySection from "@/components/journey/ArtistJourneySection";
 import Footer from "@/components/layout/Footer";
+import SocialSidebar from "@/components/layout/SocialSidebar";
 import FloatingActions from "@/components/floating/FloatingActions";
-import { WhatsAppIcon } from "@/components/ui/Icons";
 import { heroContent } from "@/app/content/home/hero";
 import { artistJourneyContent } from "@/app/content/home/artistJourney";
 import { subPageFooterContent } from "@/app/content/home/footer";
-
-const buttonIcons = {
-  calendar: <CalendarDays className="w-4 h-4" />,
-  phone: <Phone className="w-4 h-4" />,
-  whatsapp: <WhatsAppIcon className="w-4 h-4" color="#25D366" />,
-};
 
 /**
  * Reusable program (product) page:
@@ -35,11 +28,6 @@ export default function ProgramPage({ content }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { hero, courseInfo, piercing, feeBreakdown, modules, doubts, features, faqs, theme } = content;
 
-  const heroButtons = hero.buttons.map((btn) => ({
-    ...btn,
-    icon: buttonIcons[btn.iconType] || null,
-    fullWidth: true,
-  }));
 
   return (
     <main className="relative min-h-screen w-full text-white flex flex-col overflow-x-clip selection:bg-emerald-500 selection:text-black">
@@ -63,20 +51,12 @@ export default function ProgramPage({ content }) {
         mobileImage={hero.images.mobile}
         imageAlt={hero.images.alt}
         cardPosition="left"
-        showOverlay={false}
+        showOverlay
         fixedBackground
         showSocialSidebar={false}
       >
         <HeroCard
-          tagline={{
-            text: hero.tagline,
-            fontSize: "text-[10px] sm:text-[11px]",
-            letterSpacing: "tracking-[0.22em]",
-            fontWeight: "font-bold",
-            color: "text-zinc-200",
-            className:
-              "self-center sm:self-start rounded-full border border-white/20 bg-white/[0.04] px-4 py-1.5",
-          }}
+          tagline={null}
           heading={{
             as: "h1",
             text: hero.heading,
@@ -96,7 +76,7 @@ export default function ProgramPage({ content }) {
             color: "text-zinc-100",
             lineHeight: "leading-relaxed",
           }}
-          buttons={heroButtons}
+          buttons={[]}
           className="md:max-w-[40rem]"
         >
           {hero.subDescription && (
@@ -121,15 +101,19 @@ export default function ProgramPage({ content }) {
 
       <FaqSection {...faqs} dark={theme === "dark"} />
 
-      <ArtistJourneySection {...artistJourneyContent} fixedBackground={false} />
+      <ArtistJourneySection {...artistJourneyContent} />
 
       <Footer {...subPageFooterContent} />
+
+      {/* Floating vertical social icons (same as home page) */}
+      <SocialSidebar />
 
       <FloatingActions
         whatsappNumber={heroContent.contact.whatsapp}
         instituteName={heroContent.chatbot.instituteName}
         chatbotLogo={heroContent.chatbot.logoSrc}
       />
+      
     </main>
   );
 }

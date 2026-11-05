@@ -25,7 +25,7 @@ function DiplomaCard({ card }) {
         </p>
       </div>
 
-      <div className="mt-6 sm:mt-8 pt-2">
+      <div className="mt-5 sm:mt-6 pt-2">
         <Link
           href={card.cta?.href || "#"}
           className="group relative overflow-hidden w-full py-3 px-4 rounded-xl border border-zinc-300 bg-zinc-50 hover:bg-black hover:text-white hover:border-black text-black font-bold text-xs tracking-[0.2em] uppercase transition-all duration-300 text-center flex items-center justify-center shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] hover:shadow cursor-pointer"

@@ -96,7 +96,7 @@ export default function MentorsSection({
                 className="shrink-0 grow-0 pl-2 md:pl-2"
               >
               <div
-                className="relative isolate w-[260px] sm:w-[300px] lg:w-[320px] h-[400px] sm:h-[460px] lg:h-[480px] overflow-hidden border border-zinc-200/80 shadow-md group bg-zinc-900"
+                className="relative isolate w-[360px] sm:w-[390px] lg:w-[320px] h-[480px] sm:h-[520px] lg:h-[480px] overflow-hidden border border-zinc-200/80 shadow-md group bg-zinc-900"
               >
                 {/* Mentor Photo */}
                 <Image

@@ -36,7 +36,7 @@ export default function ImageFeatureCards({
           {...headerProps}
         />
 
-        <ul className="mt-10 grid grid-cols-1 gap-5 lg:mt-14 lg:grid-cols-2 lg:gap-2 mx-[calc(50%-50vw)]">
+        <ul className="mt-10 grid grid-cols-1 gap-2 lg:mt-14 lg:grid-cols-2 lg:gap-2 mx-[calc(50%-50vw)]">
           {cards.map((card, i) => (
             <li key={card.title}>
               <article

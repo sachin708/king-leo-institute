@@ -6,28 +6,35 @@ import {
   FacebookIcon,
   YouTubeIcon,
   PinterestIcon,
+  LinkedInIcon,
 } from "@/components/ui/Icons";
+import { socialUrls } from "@/app/content/socialLinks";
 
 const DEFAULT_LINKS = [
   {
     name: "Instagram",
-    href: "https://www.instagram.com/kingleotattooz",
+    href: socialUrls.instagram,
     icon: <InstagramIcon className="w-4 h-4" />,
   },
   {
     name: "Facebook",
-    href: "https://www.facebook.com/kingleotattooz",
+    href: socialUrls.facebook,
     icon: <FacebookIcon className="w-4 h-4" />,
   },
   {
     name: "YouTube",
-    href: "https://www.youtube.com/@kingleotattooz",
+    href: socialUrls.youtube,
     icon: <YouTubeIcon className="w-4 h-4" />,
   },
   {
     name: "Pinterest",
-    href: "https://www.pinterest.com/kingleotattooz",
+    href: socialUrls.pinterest,
     icon: <PinterestIcon className="w-4 h-4" />,
+  },
+  {
+    name: "LinkedIn",
+    href: socialUrls.linkedin,
+    icon: <LinkedInIcon className="w-4 h-4" />,
   },
 ];
 
@@ -44,7 +51,7 @@ export default function SocialSidebar({
   return (
     <aside
       aria-label="Social links"
-      className={`hidden lg:flex fixed right-4 xl:right-0 top-1/2 -translate-y-1/2 z-20 flex-col items-center gap-3 ${className}`.trim()}
+      className={`hidden lg:flex fixed right-4 xl:-right-2 top-1/2 -translate-y-1/2 z-20 flex-col items-center gap-3 ${className}`.trim()}
       style={style}
     >
       <div className="flex flex-col gap-2.5">

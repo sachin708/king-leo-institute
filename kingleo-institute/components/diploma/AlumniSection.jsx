@@ -71,8 +71,8 @@ export default function AlumniSection({
         images={images}
         speed={speed}
         repeat={repeat}
-        cardWidth="w-[260px] sm:w-[300px] lg:w-[320px]"
-        cardHeight="h-[370px] sm:h-[430px] lg:h-[470px]"
+        cardWidth="w-[360px] sm:w-[390px] lg:w-[320px]"
+        cardHeight="h-[480px] sm:h-[520px] lg:h-[470px]"
         rounded=""
         spacing="pr-2"
         overlay="soft"

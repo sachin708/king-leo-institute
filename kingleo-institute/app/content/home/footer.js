@@ -1,3 +1,5 @@
+import { socialUrls } from "../socialLinks";
+
 /**
  * Footer Content Data
  */
@@ -78,10 +80,11 @@ export const footerContent = {
     },
   ],
   socials: [
-    { type: "instagram", label: "Instagram", href: "https://www.instagram.com/" },
-    { type: "facebook", label: "Facebook", href: "https://www.facebook.com/" },
-    { type: "youtube", label: "YouTube", href: "https://www.youtube.com/" },
-    { type: "pinterest", label: "Pinterest", href: "https://www.pinterest.com/" },
+    { type: "instagram", label: "Instagram", href: socialUrls.instagram },
+    { type: "facebook", label: "Facebook", href: socialUrls.facebook },
+    { type: "youtube", label: "YouTube", href: socialUrls.youtube },
+    { type: "pinterest", label: "Pinterest", href: socialUrls.pinterest },
+    { type: "linkedin", label: "LinkedIn", href: socialUrls.linkedin },
   ],
   copyright: "© 2026 Kingleo Tattooz. All rights reserved.",
 };

@@ -8,7 +8,7 @@ export const heroContent = {
   // Responsive background images
   images: {
     desktop: "/home/home-hero/desktop.png",
-    mobile: "/home/home-hero/mobile.webp",
+    mobile: "/home/home-hero/mobile.jpg",
     alt: "Kingleo Tattooz Studio & Institute in Indore",
   },
 

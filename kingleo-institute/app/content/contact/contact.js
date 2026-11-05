@@ -21,7 +21,6 @@ export const contactContent = {
       label: "What Type Of Tattoo Course Are You Interested In?",
       options: [
         "Diploma in Tattoo Art",
-        "360° Tattoo Training Learning Program",
         "Advanced Piercing Course",
       ],
     },

@@ -8,6 +8,7 @@ import {
   FacebookIcon,
   YouTubeIcon,
   PinterestIcon,
+  LinkedInIcon,
 } from "@/components/ui/Icons";
 
 const socialIcons = {
@@ -15,6 +16,7 @@ const socialIcons = {
   facebook: FacebookIcon,
   youtube: YouTubeIcon,
   pinterest: PinterestIcon,
+  linkedin: LinkedInIcon,
 };
 
 const headingClass =
