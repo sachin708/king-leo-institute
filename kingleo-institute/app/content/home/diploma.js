@@ -6,7 +6,7 @@
 
 export const diplomaContent = {
   tagline: "6 MONTH DIPLOMA ROADMAP",
-  heading: "Diploma Tattoo Art",
+  heading: "Diploma In Tattoo Art",
   description:
     "Central India's only complete ZERO TO CERTIFIED PRO system that builds your art, career, brand and income together. From certification to safety to paid internship we don't just teach tattooing, we build your future.",
   cards: [

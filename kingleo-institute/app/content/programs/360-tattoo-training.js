@@ -42,7 +42,7 @@ export const program360Content = {
     tagline: "THE LEGEND PROTOCOL",
     heading: "14 Modules. One Complete Career System.",
     description:
-      "From paper to paying clients — art, craft, safety, studio, business and brand, trained together.",
+      "From paper to paying clients art, craft, safety, studio, business and brand, trained together.",
     items: [
       {
         icon: "pen-tool",

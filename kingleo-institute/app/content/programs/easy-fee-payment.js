@@ -13,8 +13,8 @@ export const easyFeePaymentContent = {
       "Make your Diploma Tattoo Course more affordable with flexible EMI options. Learn professional tattooing while paying your fees in convenient instalments.",
     images: {
       // Replace with a dedicated image, e.g. /programs/easy-fee-payment/desktop.webp
-      desktop: "/home/artist-journey/desktop.webp",
-      mobile: "/home/artist-journey/mobile.webp",
+      desktop: "/programs/easy-fee-payment/desktop.webp",
+      mobile: "/programs/easy-fee-payment/mobile.jpg",
       alt: "Easy Fee Payment Mode Via Instalments - Kingleo Tattooz Institute",
     },
     buttons: [

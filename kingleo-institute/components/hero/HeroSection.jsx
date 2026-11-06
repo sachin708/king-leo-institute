@@ -19,6 +19,7 @@ export default function HeroSection({
   cardProps = {},
   showOverlay = true,
   fixedBackground = false, // desktop image stays fixed while the page scrolls past it
+  offsetNavbar = false, // desktop: start the image below the fixed navbar and keep its top visible
   showSocialSidebar = true,
   socialLinks = [],
   className = "",
@@ -37,14 +38,18 @@ export default function HeroSection({
 
   return (
     <section
-      className={`relative w-full md:min-h-screen flex flex-col md:justify-between overflow-hidden bg-black md:bg-transparent pt-20 sm:pt-24 md:pt-0 text-white ${className}`.trim()}
+      className={`relative w-full ${
+        offsetNavbar ? "md:min-h-[max(100vh,calc(56.25vw_+_6rem))]" : "md:min-h-screen"
+      } flex flex-col md:justify-between overflow-hidden bg-black md:bg-transparent pt-20 sm:pt-24 md:pt-0 text-white ${className}`.trim()}
       style={fixedBackground ? { clipPath: "inset(0px)", WebkitClipPath: "inset(0px)", ...style } : style}
     >
       {/* Background Images: Desktop (full-bleed behind card) vs Mobile (stacked above card) */}
       <div
         className={`relative ${
           fixedBackground ? "md:fixed" : "md:absolute"
-        } md:inset-0 z-0`}
+        } ${
+          offsetNavbar ? "md:inset-x-0 md:bottom-0 md:top-24" : "md:inset-0"
+        } z-0`}
       >
         {/* Desktop Image (Screen md and above) */}
         <div className="hidden md:block relative w-full h-full">
@@ -55,7 +60,7 @@ export default function HeroSection({
             priority
             quality={90}
             sizes="100vw"
-            className="object-cover object-center"
+            className={`object-cover ${offsetNavbar ? "object-top" : "object-center"}`}
           />
 
         </div>

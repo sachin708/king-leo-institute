@@ -5,7 +5,7 @@
 
 export const alumniContent = {
   tagline: "PASSOUT STUDENTS & ALUMNI",
-  heading: "Our Graduate ArtistsBuilding Real Careers",
+  heading: "Our Graduate Artists Building Real Careers",
   description:
     "Meet our successful academy graduates working as professional tattoo artists, running their own independent tattoo setups, and creating stunning artwork across top studios.",
   images: [

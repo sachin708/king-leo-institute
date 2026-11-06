@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import ProgramPage from "@/components/programs/ProgramPage";
 import { programs } from "@/app/content/programs";
@@ -16,9 +17,17 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default async function Page({ params }) {
+async function ProgramContent({ params }) {
   const { slug } = await params;
   const content = programs[slug];
   if (!content) notFound();
   return <ProgramPage content={content} />;
+}
+
+export default function Page({ params }) {
+  return (
+    <Suspense fallback={null}>
+      <ProgramContent params={params} />
+    </Suspense>
+  );
 }

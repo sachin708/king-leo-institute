@@ -52,7 +52,7 @@ export default function ProgramPage({ content }) {
         imageAlt={hero.images.alt}
         cardPosition="left"
         showOverlay
-        fixedBackground
+        offsetNavbar
         showSocialSidebar={false}
       >
         <HeroCard
@@ -77,7 +77,7 @@ export default function ProgramPage({ content }) {
             lineHeight: "leading-relaxed",
           }}
           buttons={[]}
-          className="md:max-w-[40rem]"
+          className="md:max-w-[30rem]"
         >
           {hero.subDescription && (
             <p className="text-xs sm:text-sm md:text-[15px] text-zinc-200 leading-relaxed">

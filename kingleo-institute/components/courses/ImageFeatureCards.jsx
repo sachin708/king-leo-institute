@@ -42,13 +42,25 @@ export default function ImageFeatureCards({
               <article
                 className={`group relative isolate overflow-hidden ${cardHeight}`}
               >
+                {card.mobileImage && (
+                  <Image
+                    src={card.mobileImage}
+                    alt={card.alt || card.title}
+                    fill
+                    sizes="100vw"
+                    priority={i === 0}
+                    className="object-cover transition-transform duration-700 ease-out sm:hidden"
+                  />
+                )}
                 <Image
                   src={card.image}
                   alt={card.alt || card.title}
                   fill
                   sizes={imageSizes}
                   priority={i === 0}
-                  className="object-cover transition-transform duration-700 ease-out lg:group-hover:scale-105"
+                  className={`object-cover transition-transform duration-700 ease-out lg:group-hover:scale-105 ${
+                    card.mobileImage ? "hidden sm:block" : ""
+                  }`}
                 />
                 <div
                   aria-hidden="true"

@@ -4,6 +4,9 @@ const nextConfig = {
   experimental: {
     agentFeedback: true,
   },
+  images: {
+    qualities: [75, 90],
+  },
   cacheComponents: true,
   partialPrefetching: true,
   reactCompiler: true,

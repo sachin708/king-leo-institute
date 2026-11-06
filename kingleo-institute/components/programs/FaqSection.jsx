@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import { ChevronDown } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 
 /**
@@ -32,30 +31,48 @@ export default function FaqSection({
           taglineProps={dark ? { color: "text-white" } : {}}
           headingProps={dark ? { color: "text-white" } : {}}
         />
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col">
           {items.map((item, i) => {
             const isOpen = openIndex === i;
             return (
               <div
                 key={item.question}
-                className={`rounded-2xl border overflow-hidden ${
-                  dark ? "border-white/10 bg-gradient-to-br from-[#111a2c] to-black" : "border-black bg-zinc-50"
+                className={`border-b transition-colors duration-300 ${
+                  isOpen
+                    ? "border-black-700"
+                    : dark
+                      ? "border-white/20"
+                      : "border-black/20"
                 }`}
               >
                 <button
                   type="button"
                   onClick={() => setOpenIndex(isOpen ? -1 : i)}
                   aria-expanded={isOpen}
-                  className="w-full flex items-center justify-between gap-4 px-5 sm:px-7 py-4 sm:py-5 text-left cursor-pointer"
+                  className="w-full flex items-center justify-between gap-4 py-4 sm:py-5 text-left cursor-pointer"
                 >
-                  <span className={`font-semibold text-sm sm:text-base ${dark ? "text-white" : "text-black"}`}>
+                  <span
+                    className={`text-sm sm:text-lg transition-colors duration-300 ${
+                      isOpen ? "text-black-900 font-semibold" : dark ? "text-white font-medium" : "text-black font-medium"
+                    }`}
+                  >
                     {item.question}
                   </span>
-                  <ChevronDown
-                    className={`w-5 h-5 shrink-0 ${dark ? "text-white" : "text-black"} transition-transform duration-300 ${
-                      isOpen ? "rotate-180" : ""
+                  <span
+                    className={`relative w-5 h-5 shrink-0 transition-colors duration-300 ${
+                      isOpen ? "text-black-900" : dark ? "text-white" : "text-black"
                     }`}
-                  />
+                    aria-hidden="true"
+                  >
+                    {/* horizontal bar (always visible) */}
+                    <span className="absolute left-0 top-1/2 h-[2px] w-full -translate-y-1/2 bg-current rounded-full" />
+                    {/* vertical bar (fades/rotates away when open -> minus) */}
+                    <span
+                      className={`absolute top-0 left-1/2 w-[2px] h-full -translate-x-1/2 bg-current rounded-full transition-transform duration-300 ${
+                        isOpen ? "rotate-90 opacity-0" : ""
+                      }`}
+                    />
+                  </span>
                 </button>
                 <div
                   className={`grid transition-all duration-300 ease-out ${
@@ -63,7 +80,7 @@ export default function FaqSection({
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <p className={`px-5 sm:px-7 py-4 border-t ${dark ? "border-white/10 text-zinc-400" : "border-black/15 text-neutral-700"} text-sm sm:text-[15px] leading-relaxed`}>
+                    <p className={`pb-5 pr-8 ${dark ? "text-zinc-300" : "text-neutral-700"} text-sm sm:text-[15px] leading-relaxed`}>
                       {item.answer}
                     </p>
                   </div>

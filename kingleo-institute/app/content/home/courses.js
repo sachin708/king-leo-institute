@@ -3,7 +3,8 @@ export const coursesContent = {
   heading: "Choose Your Path",
   cards: [
     {
-      image: "/home/our-courses/diploma-art.webp",
+      image: "/home/our-courses/diploma-art/desktop.webp",
+      mobileImage: "/home/our-courses/diploma-art/mobile.webp",
       alt: "Instructor guiding a student through a live tattoo session",
       category: "6 Months",
       title: "Diploma in Tattoo Art",
@@ -12,7 +13,8 @@ export const coursesContent = {
       cta: { label: "Know More", href: "#" },
     },
     {
-      image: "/home/our-courses/advanced-course.webp",
+      image: "/home/our-courses/piercing-course/desktop.webp",
+      mobileImage: "/home/our-courses/piercing-course/mobile.webp",
       alt: "Instructor performing an ear piercing during a training session",
       category: "3 Days",
       title: "Advanced Piercing Course",
