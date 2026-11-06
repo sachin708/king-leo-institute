@@ -10,7 +10,7 @@ export const coursesContent = {
       title: "Diploma in Tattoo Art",
       description:
         "100% practical training with live real skin sessions, pro mentorship, and studio ready skills to turn your passion into a career.",
-      cta: { label: "Know More", href: "#" },
+      cta: { label: "Know More", href: "/programs/diploma-art-tattoo" },
     },
     {
       image: "/home/our-courses/piercing-course/desktop.webp",
@@ -20,7 +20,7 @@ export const coursesContent = {
       title: "Advanced Piercing Course",
       description:
         "Learn fundamentals of body anatomy and professional piercing techniques. Get hands on knowledge of proper placement, technique and safety before you pierce.",
-      cta: { label: "Know More", href: "#" },
+      cta: { label: "Know More", href: "/programs/advanced-piercing-course" },
     },
   ],
 };

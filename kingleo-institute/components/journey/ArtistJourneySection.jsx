@@ -16,7 +16,7 @@ import { WhatsAppIcon } from "@/components/ui/Icons";
  * - Visual scroll reveal: starts with artist portrait, scrolls smoothly into content
  */
 export default function ArtistJourneySection({
-  tagline = "FREE ORIENTATION - LIMITED SEATS",
+  // tagline = "FREE ORIENTATION - LIMITED SEATS",
   heading = "Ready To Start Your\nTattoo Artist Journey?",
   subheading = "Stop Dreaming. Start Inking.",
   paragraphs = [
@@ -137,11 +137,11 @@ export default function ArtistJourneySection({
         <div className="w-full max-w-xl lg:max-w-3xl flex flex-col items-start text-left">
 
           {/* Subtitle / Tagline */}
-          {tagline && (
+          {/* {tagline && (
             <p className="text-[11px] sm:text-xs md:text-[13px] font-semibold tracking-[0.22em] text-zinc-300 uppercase mb-2.5 sm:mb-3">
               {tagline}
             </p>
-          )}
+          )} */}
 
           {/* Main Heading */}
           {heading && (

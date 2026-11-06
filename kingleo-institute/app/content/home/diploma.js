@@ -62,7 +62,7 @@ export const diplomaContent = {
       title: "Advanced Sketching & Digital Design",
       description:
         "Master freehand sketching, stencil making, human anatomy, and iPad Procreate design. Develop your unique signature artistic style before touching the machine.",
-      cta: { label: "Know More", href: "#" },
+      cta: { label: "Know More", href: "/programs/advanced-sketching-digital-design" },
     },
   ],
 };

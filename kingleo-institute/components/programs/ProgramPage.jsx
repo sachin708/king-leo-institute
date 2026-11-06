@@ -50,7 +50,7 @@ export default function ProgramPage({ content }) {
         desktopImage={hero.images.desktop}
         mobileImage={hero.images.mobile}
         imageAlt={hero.images.alt}
-        cardPosition="left"
+        cardPosition={hero.cardPosition || "left"}
         showOverlay
         offsetNavbar
         showSocialSidebar={false}
@@ -77,7 +77,7 @@ export default function ProgramPage({ content }) {
             lineHeight: "leading-relaxed",
           }}
           buttons={[]}
-          className="md:max-w-[30rem]"
+          className="md:max-w-[32rem]"
         >
           {hero.subDescription && (
             <p className="text-xs sm:text-sm md:text-[15px] text-zinc-200 leading-relaxed">
@@ -99,7 +99,7 @@ export default function ProgramPage({ content }) {
 
       {features && <FeatureCardsSection {...features} />}
 
-      <FaqSection {...faqs} dark={theme === "dark"} />
+      {faqs && <FaqSection {...faqs} dark={theme === "dark"} />}
 
       <ArtistJourneySection {...artistJourneyContent} />
 

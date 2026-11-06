@@ -4,7 +4,7 @@
  */
 
 export const artistJourneyContent = {
-  tagline: "FREE ORIENTATION - LIMITED SEATS",
+  // tagline: "FREE ORIENTATION - LIMITED SEATS",
   heading: "Ready To Start Your Tattoo\nArtist Journey?",
   subheading: "Stop Dreaming. Start Inking.",
   paragraphs: [
