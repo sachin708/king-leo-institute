@@ -72,8 +72,8 @@ export const heroContent = {
 
   // Contact info
   contact: {
-    phones: ["+91 95842 28615", "+91 70009 24824"],
-    email: "kingleotattooz@gmail.com",
+    phones: ["+91 9343623234", "+91 9343623234"],
+    email: "kingleotattoozinstitute@gmail.com",
     whatsapp: "919343623234",
   },
 
@@ -85,14 +85,12 @@ export const heroContent = {
 
   // Navigation Menu links
   menuItems: [
-    { label: "HOME", href: "/", active: true },
-    { label: "ABOUT US", href: "#about" },
-    { label: "EXPLORE OUR ARTS", href: "#arts" },
-    { label: "PIERCINGS", href: "#piercings" },
-    { label: "BLOGS", href: "#blogs" },
-    { label: "AFTERCARE", href: "#aftercare" },
-    { label: "TATTOO REMOVAL", href: "#removal" },
-    { label: "TATTOO EMI", href: "#emi" },
-    { label: "LEARN TATTOOING", href: "#courses", hasArrow: true },
+    { label: "HOME", href: "/" },
+    { label: "BLOG", href: "#" }, // blog page not created yet
+    { label: "ALL COURSES", href: "/#courses" },
+    { label: "ONLINE LEARNING", href: "#" }, // page not created yet
+    { label: "TEAM", href: "/#team" },
+    { label: "STUDENT LOAN", href: "/programs/easy-fee-payment" },
+    { label: "INTERNSHIP PROGRAM", href: "/programs/internship-and-career-support" },
   ],
 };

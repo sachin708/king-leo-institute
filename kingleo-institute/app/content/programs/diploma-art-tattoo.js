@@ -17,5 +17,6 @@ export const diplomaArtTattooContent = {
       mobile: "/programs/diploma-art-tattoo/mobile.webp",
       alt: "Tattoo artist working on a classical statue sleeve - Diploma in Tattoo Art",
     },
+    cardPosition:"right"
   },
 };

@@ -3,30 +3,23 @@
 import React, { useEffect } from "react";
 import Link from "next/link";
 import { socialUrls } from "@/app/content/socialLinks";
-import {
-  ShieldCheck,
-  Droplets,
-  ArrowUpRight,
-  Phone,
-  Mail,
-} from "lucide-react";
+import { ArrowUpRight, Phone, Mail } from "lucide-react";
 import {
   InstagramIcon,
   FacebookIcon,
   YouTubeIcon,
   PinterestIcon,
+  LinkedInIcon,
 } from "@/components/ui/Icons";
 
 const DEFAULT_MENU_ITEMS = [
-  { label: "HOME", href: "#", active: true },
-  { label: "ABOUT US", href: "#about" },
-  { label: "EXPLORE OUR ARTS", href: "#arts" },
-  { label: "PIERCINGS", href: "#piercings" },
-  { label: "BLOGS", href: "#blogs" },
-  { label: "AFTERCARE", href: "#aftercare" },
-  { label: "TATTOO REMOVAL", href: "#removal" },
-  { label: "TATTOO EMI", href: "#emi" },
-  { label: "LEARN TATTOOING", href: "#courses", hasArrow: true },
+  { label: "HOME", href: "/" },
+  { label: "BLOG", href: "#" },
+  { label: "ALL COURSES", href: "/#courses" },
+  { label: "ONLINE LEARNING", href: "#" },
+  { label: "TEAM", href: "/#team" },
+  { label: "STUDENT LOAN", href: "/programs/easy-fee-payment" },
+  { label: "INTERNSHIP PROGRAM", href: "/programs/internship-and-career-support" },
 ];
 
 /**
@@ -37,13 +30,14 @@ export default function MenuModal({
   isOpen = false,
   onClose,
   menuItems = DEFAULT_MENU_ITEMS,
-  phoneNumbers = ["+91 95842 28615", "+91 70009 24824"],
-  email = "kingleotattooz@gmail.com",
+  phoneNumbers = ["+91 9343623234", "+91 9343623234"],
+  email = "kingleotattoozinstitute@gmail.com",
   socialLinks = [
     { name: "Instagram", href: socialUrls.instagram, icon: <InstagramIcon className="w-4 h-4 sm:w-[18px] sm:h-[18px]" /> },
     { name: "Facebook", href: socialUrls.facebook, icon: <FacebookIcon className="w-4 h-4 sm:w-[18px] sm:h-[18px]" /> },
     { name: "YouTube", href: socialUrls.youtube, icon: <YouTubeIcon className="w-4 h-4 sm:w-[18px] sm:h-[18px]" /> },
     { name: "Pinterest", href: socialUrls.pinterest, icon: <PinterestIcon className="w-4 h-4 sm:w-[18px] sm:h-[18px]" /> },
+    { name: "LinkedIn", href: socialUrls.linkedin, icon: <LinkedInIcon className="w-4 h-4 sm:w-[18px] sm:h-[18px]" /> },
   ],
 }) {
   // Lock background scroll when open
@@ -91,9 +85,6 @@ export default function MenuModal({
           {/* Left Column: Menu Links */}
           <div className="md:col-span-7 flex flex-col justify-between md:pr-8 md:border-r md:border-white/10">
             <div>
-              <span className="text-[11px] sm:text-xs font-bold tracking-[0.2em] text-zinc-400 uppercase block mb-3 sm:mb-4">
-                MENU
-              </span>
               <nav className="flex flex-col gap-1 sm:gap-1.5">
                 {menuItems.map((item, idx) => (
                   <Link
@@ -117,45 +108,17 @@ export default function MenuModal({
           </div>
 
           {/* Right Column: Sub-brands & Contact Information */}
-          <div className="md:col-span-5 flex flex-col justify-between gap-8 md:pl-2">
-            {/* Brand Badges with Lucide Icons */}
-            <div className="flex flex-col gap-3">
-              {/* TattooCare Card */}
-              <div className="flex items-center gap-3.5 p-3 rounded-lg bg-black/40 border border-white/20 hover:border-white/40 transition-colors">
-                <div className="w-10 h-10 rounded-lg bg-emerald-950/60 border border-emerald-500/30 flex items-center justify-center shrink-0">
-                  <ShieldCheck className="w-6 h-6 text-emerald-400" />
-                </div>
-                <div>
-                  <div className="text-[13px] sm:text-[14px] font-extrabold tracking-wider text-white">
-                    KINGLEO
-                  </div>
-                  <div className="text-xs sm:text-[13px] text-zinc-300 font-normal">
-                    TattooCare
-                  </div>
-                </div>
-              </div>
-
-              {/* Tattoo Butter Card */}
-              <div className="flex items-center gap-3.5 p-3 rounded-lg bg-black/40 border border-white/20 hover:border-white/40 transition-colors">
-                <div className="w-10 h-10 rounded-lg bg-zinc-900 border border-white/20 flex items-center justify-center shrink-0">
-                  <Droplets className="w-6 h-6 text-zinc-100" />
-                </div>
-                <div>
-                  <div className="text-[13px] sm:text-[14px] font-extrabold tracking-wider text-white">
-                    KINGLEO
-                  </div>
-                  <div className="text-xs sm:text-[13px] text-zinc-300 font-normal tracking-wide">
-                    TATTOO BUTTER
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="md:col-span-5 flex flex-col gap-8 md:pl-2">
 
             {/* Contact Details */}
-            <div className="flex flex-col gap-3 pt-6 md:pt-10">
-              <span className="text-[11px] sm:text-xs font-bold tracking-[0.2em] text-zinc-400 uppercase">
+            <div className="flex flex-col gap-3">
+              <Link
+                href="/contact"
+                onClick={onClose}
+                className="text-[11px] sm:text-xs font-bold tracking-[0.2em] text-zinc-400 hover:text-white transition-colors uppercase w-fit"
+              >
                 CONTACT-US
-              </span>
+              </Link>
 
               <div className="flex items-start gap-3 text-xs sm:text-sm text-zinc-300">
                 <Phone className="w-4 h-4 text-zinc-400 mt-1 shrink-0" />
@@ -183,7 +146,7 @@ export default function MenuModal({
               </div>
 
               {/* Social Icons Row */}
-              <div className="flex items-center gap-4 pt-2">
+              <div className="flex items-center gap-4 pt-6">
                 {socialLinks.map((s, idx) => (
                   <a
                     key={idx}

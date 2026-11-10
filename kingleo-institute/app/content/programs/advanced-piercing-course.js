@@ -30,6 +30,7 @@ export const advancedPiercingCourseContent = {
     groups: [
       {
         title: "Ear Piercing",
+        image: "/programs/advanced-piercing-course/ear-piercing.webp",
         items: [
           "Lobe Piercing",
           "Upper Lobe Piercing",
@@ -48,6 +49,7 @@ export const advancedPiercingCourseContent = {
       },
       {
         title: "Facial Piercing",
+        image: "/programs/advanced-piercing-course/facial-piercing.webp",
         items: [
           "Labret Piercing",
           "Vertical Labret Piercing",
@@ -72,6 +74,7 @@ export const advancedPiercingCourseContent = {
       },
       {
         title: "Body Piercing",
+        image: "/programs/advanced-piercing-course/body-piercing.webp",
         items: [
           "Nipple Piercing",
           "Belly Piercing",

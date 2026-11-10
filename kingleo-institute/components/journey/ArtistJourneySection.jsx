@@ -48,11 +48,11 @@ export default function ArtistJourneySection({
       href: "https://wa.me/919343623234?text=Hi%20Kingleo%20Tattooz%2C%20I%20want%20to%20know%20more%20about%20the%20tattoo%20artist%20journey",
     },
   ],
-  highlights = [
-    "100% PRACTICAL",
-    "LIVE REAL SKIN",
-    "INDUSTRY DIPLOMA",
-  ],
+  // highlights = [
+  //   "100% PRACTICAL",
+  //   "LIVE REAL SKIN",
+  //   "INDUSTRY DIPLOMA",
+  // ],
   fixedBackground = true, // false: image scrolls with the section instead of staying fixed
   className = "",
 }) {
@@ -198,18 +198,6 @@ export default function ArtistJourneySection({
                   </Link>
                 );
               })}
-            </div>
-          )}
-
-          {/* Bottom Bullet Highlights */}
-          {highlights && highlights.length > 0 && (
-            <div className="flex flex-wrap items-center gap-x-4 sm:gap-x-6 gap-y-2 text-[11px] sm:text-xs md:text-[13px] font-semibold tracking-wider text-zinc-300 uppercase">
-              {highlights.map((highlight, idx) => (
-                <div key={idx} className="inline-flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-white"></div>
-                  <span className="text-white text-[10px] md:text-[12px]" aria-hidden="true">{highlight}</span>
-                </div>
-              ))}
             </div>
           )}
 

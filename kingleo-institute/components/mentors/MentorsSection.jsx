@@ -47,7 +47,8 @@ export default function MentorsSection({
 
   return (
     <section
-      className={`w-full bg-white text-black pt-6 lg:pt-20 overflow-hidden select-none ${className}`.trim()}
+      id="team"
+      className={`w-full bg-white text-black pt-6 lg:pt-20 overflow-hidden select-none scroll-mt-20 ${className}`.trim()}
     >
       {/* Section Header: Uses Tagline (small heading), Heading, and Description components */}
       <div className="mx-auto max-w-7xl px-5 sm:px-8 mb-6 sm:mb-8 text-center flex flex-col items-center">

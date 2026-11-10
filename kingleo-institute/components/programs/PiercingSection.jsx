@@ -33,26 +33,37 @@ export default function PiercingSection({
           </p>
         )}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
           {groups.map((group) => (
             <article
               key={group.title}
-              className="rounded-2xl border border-zinc-300 bg-white p-6 sm:p-8 hover:shadow-lg hover:border-zinc-400 transition-all duration-300"
+              className="group flex h-full w-full flex-col rounded-2xl border border-zinc-300 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-black hover:shadow-xl"
             >
-              <h3 className="font-sans font-bold text-xl sm:text-2xl text-black">
+              {group.image && (
+                <div className="relative w-full aspect-[4/3] sm:aspect-[4/4] overflow-hidden rounded-xl">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={group.image}
+                    alt={group.imageAlt || group.title}
+                    loading="lazy"
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+              )}
+
+              <h3 className=" px-4 sm:px-5 mt-6 font-sans font-bold text-2xl sm:text-[28px] leading-tight text-black">
                 {group.title}
               </h3>
-              <ul className="mt-5 flex flex-col gap-2.5">
+              {/* <span className="mt-2 block h-[2px] w-20 bg-black" /> */}
+
+              <ul className=" px-4 sm:px-5 mt-4 flex flex-1 flex-col">
                 {group.items.map((item) => (
                   <li
                     key={item}
-                    className="flex items-start gap-3 text-sm sm:text-[15px] text-neutral-700"
+                    className="flex items-center justify-between gap-1 py-1.5 text-sm sm:text-[15px] text-neutral-900 last:border-b-0"
                   >
-                    <span
-                      aria-hidden="true"
-                      className="mt-[0.55em] h-1.5 w-1.5 shrink-0 rounded-full bg-black"
-                    />
-                    {item}
+                    <span>{item}</span>
+                  
                   </li>
                 ))}
               </ul>

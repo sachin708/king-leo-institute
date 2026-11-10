@@ -73,7 +73,8 @@ export default function DiplomaSection({
 
   return (
     <section
-      className={`w-full bg-white text-black pt-12 lg:pt-20 overflow-hidden select-none ${className}`.trim()}
+      id="courses"
+      className={`w-full bg-white text-black pt-12 lg:pt-20 overflow-hidden select-none scroll-mt-20 ${className}`.trim()}
     >
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         {/* Section Header styled after FeatureSection */}

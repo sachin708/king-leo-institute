@@ -36,9 +36,9 @@ export const artistJourneyContent = {
       href: "https://wa.me/919343623234?text=Hi%20Kingleo%20Tattooz%2C%20I%20want%20to%20know%20more%20about%20the%20tattoo%20artist%20journey",
     },
   ],
-  highlights: [
-    "100% PRACTICAL",
-    "LIVE REAL SKIN",
-    "INDUSTRY DIPLOMA",
-  ],
+  // highlights: [
+  //   "100% PRACTICAL",
+  //   "LIVE REAL SKIN",
+  //   "INDUSTRY DIPLOMA",
+  // ],
 };
