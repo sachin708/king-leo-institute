@@ -115,7 +115,7 @@ export default function MenuModal({
               <Link
                 href="/contact"
                 onClick={onClose}
-                className="text-[11px] sm:text-xs font-bold tracking-[0.2em] text-zinc-400 hover:text-white transition-colors uppercase w-fit"
+                className="text-[11px] sm:text-[14px] font-bold tracking-[0.2em] text-zinc-400 hover:text-white transition-colors uppercase w-fit"
               >
                 CONTACT-US
               </Link>
@@ -146,7 +146,9 @@ export default function MenuModal({
               </div>
 
               {/* Social Icons Row */}
-              <div className="flex items-center gap-4 pt-6">
+              <div className="flex flex-col gap-4 pt-6">
+                <p className="text-[11px] sm:text-[14px] font-bold tracking-[0.2em] text-zinc-400 hover:text-white transition-colors uppercase w-fit">Social Follows</p>
+                <div className="flex items-center gap-4">
                 {socialLinks.map((s, idx) => (
                   <a
                     key={idx}
@@ -159,6 +161,7 @@ export default function MenuModal({
                     {s.icon}
                   </a>
                 ))}
+                </div>
               </div>
             </div>
           </div>

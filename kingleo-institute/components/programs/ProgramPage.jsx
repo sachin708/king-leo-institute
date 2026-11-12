@@ -7,6 +7,9 @@ import HeroSection from "@/components/hero/HeroSection";
 import HeroCard from "@/components/hero/HeroCard";
 import CourseInfoCard from "@/components/programs/CourseInfoCard";
 import PiercingSection from "@/components/programs/PiercingSection";
+import CurriculumSection from "@/components/programs/CurriculumSection";
+import SkillCardsSection from "@/components/programs/SkillCardsSection";
+import ProgramFitSection from "@/components/programs/ProgramFitSection";
 import FeeBreakdownSection from "@/components/programs/FeeBreakdownSection";
 import ModulesSection from "@/components/programs/ModulesSection";
 import HoverCardsSection from "@/components/programs/HoverCardsSection";
@@ -26,7 +29,7 @@ import { subPageFooterContent } from "@/app/content/home/footer";
  */
 export default function ProgramPage({ content }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { hero, courseInfo, piercing, feeBreakdown, modules, doubts, features, faqs, theme } = content;
+  const { hero, courseInfo, curriculum, skillCards, programFit, piercing, feeBreakdown, modules, doubts, features, faqs, theme } = content;
 
 
   return (
@@ -88,6 +91,12 @@ export default function ProgramPage({ content }) {
       </HeroSection>
 
       {courseInfo && <CourseInfoCard {...courseInfo} />}
+
+      {curriculum && <CurriculumSection {...curriculum} />}
+
+      {skillCards && <SkillCardsSection {...skillCards} />}
+
+      {programFit && <ProgramFitSection {...programFit} />}
 
       {piercing && <PiercingSection {...piercing} />}
 
