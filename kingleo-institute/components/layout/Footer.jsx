@@ -57,13 +57,13 @@ export default function Footer({
                 ~10% sides), so it is cropped to its visible area to keep the top
                 aligned with the other columns' headings.
               */
-              <div className="relative overflow-hidden self-start w-[130px] aspect-[4696/2167] mb-6">
+              <div className="relative overflow-hidden self-start w-[134px] aspect-[4696/2167] mb-6">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={logo.src}
                   alt={logo.alt}
                   className="absolute max-w-none h-auto"
-                  style={{ width: "127.8%", left: "-12.2%", top: "-42.4%" }}
+                  style={{ width: "120.8%", left: "-12.2%", top: "-42.4%" }}
                 />
               </div>
             )}

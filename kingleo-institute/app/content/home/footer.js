@@ -71,7 +71,7 @@ export const footerContent = {
           title: "Other Links",
           links: [
             { label: "Privacy Policy", href: "/privacy" },
-            { label: "Terms", href: "/terms" },
+            { label: "Terms & Condition", href: "/terms" },
             { label: "Cookie Policy", href: "/cookies" },
           ],
           socials: true,

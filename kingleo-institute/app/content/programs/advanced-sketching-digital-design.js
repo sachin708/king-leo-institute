@@ -182,6 +182,6 @@ export const advancedSketchingDigitalDesignContent = {
         value: "12:00 PM – 6:00 PM (Monday to Sunday)",
       },
     ],
-    notice: "Admissions Open, but Limited Seats",
+    // notice: "Admissions Open, but Limited Seats",
   },
 };

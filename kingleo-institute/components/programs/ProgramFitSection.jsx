@@ -26,7 +26,7 @@ export default function ProgramFitSection({
           <div className="grid grid-cols-1 lg:grid-cols-2">
             <div className="p-6 sm:p-9 lg:p-12 lg:border-r border-b lg:border-b-0 border-zinc-200 bg-zinc-50">
               {tagline && (
-                <p className="text-xs font-semibold tracking-[0.3em] text-emerald-700">
+                <p className="text-xs font-semibold tracking-[0.3em] text-black">
                   {tagline}
                 </p>
               )}
@@ -48,7 +48,7 @@ export default function ProgramFitSection({
                         key={f.label}
                         className="flex items-start gap-4 rounded-xl border border-zinc-300 bg-white p-4"
                       >
-                        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-emerald-300 bg-emerald-50 text-emerald-700">
+                        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-zinc-300 bg-white text-black">
                           <Icon className="h-5 w-5" strokeWidth={1.9} />
                         </span>
                         <span>
@@ -78,8 +78,8 @@ export default function ProgramFitSection({
                     key={b}
                     className="flex items-start gap-3 rounded-xl border border-zinc-300 bg-white p-4 text-sm sm:text-[15px] font-medium leading-snug text-neutral-900 transition-all duration-300 hover:-translate-y-0.5 hover:border-black hover:shadow-md"
                   >
-                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
-                      <Check className="h-3 w-3" strokeWidth={3} />
+                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center text-black">
+                      <Check className="h-4 w-4" strokeWidth={2.5} />
                     </span>
                     <span>{b}</span>
                   </li>
@@ -89,10 +89,10 @@ export default function ProgramFitSection({
           </div>
 
           {notice && (
-            <div className="flex items-center justify-center gap-3 border-t border-emerald-200 bg-emerald-50 px-5 py-4 text-center text-sm sm:text-base font-bold tracking-wide text-emerald-800">
+            <div className="flex items-center justify-center gap-3 border-t border-zinc-300 bg-zinc-50 px-5 py-4 text-center text-sm sm:text-base font-bold tracking-wide text-black">
               <span className="relative flex h-2.5 w-2.5 shrink-0">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500/60" />
-                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-600" />
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-black/40" />
+                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-black" />
               </span>
               {notice}
             </div>

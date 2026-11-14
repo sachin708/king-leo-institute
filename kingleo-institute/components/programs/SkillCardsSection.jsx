@@ -12,7 +12,6 @@ import {
   Paintbrush,
   Sparkles,
   Users,
-  Check,
 } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 
@@ -58,43 +57,37 @@ export default function SkillCardsSection({
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
-          {items.map((item, i) => {
+          {items.map((item) => {
             const Icon = icons[item.icon] || Layers;
             return (
               <article
                 key={item.title}
-                className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-zinc-300 bg-white p-6 sm:p-7 transition-all duration-300 hover:-translate-y-1 hover:border-black hover:shadow-xl"
+                className="flex h-full flex-col rounded-2xl border border-zinc-300 bg-white p-6 sm:p-7 transition-all duration-300 hover:border-zinc-400 hover:shadow-lg"
               >
-                <span
-                  aria-hidden="true"
-                  className="pointer-events-none absolute right-5 top-3 select-none font-sans text-6xl font-extrabold leading-none text-zinc-100 transition-colors duration-300 group-hover:text-emerald-100"
-                >
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-
-                <span className="relative inline-flex h-14 w-14 items-center justify-center rounded-xl border border-zinc-300 bg-white text-black transition-colors duration-300 group-hover:border-emerald-500 group-hover:bg-emerald-50 group-hover:text-emerald-700">
+                <span className="inline-flex h-14 w-14 items-center justify-center rounded-xl border border-zinc-300 bg-white text-black">
                   <Icon className="h-6 w-6" strokeWidth={1.75} />
                 </span>
 
-                <h3 className="relative mt-6 font-sans text-lg sm:text-xl font-bold leading-snug text-black">
+                <h3 className="mt-6 font-sans text-lg sm:text-xl font-bold leading-snug text-black">
                   {item.title}
                 </h3>
-                <span className="mt-3 block h-[2px] w-12 bg-emerald-500 transition-all duration-300 group-hover:w-20" />
 
                 {item.highlightsTitle && (
-                  <p className="mt-4 text-[11px] sm:text-xs font-semibold tracking-[0.18em] uppercase text-neutral-500">
+                  <p className="mt-2 text-[11px] sm:text-xs font-semibold tracking-[0.18em] uppercase text-black">
                     {item.highlightsTitle}
                   </p>
                 )}
-                <ul className="mt-3 flex flex-1 flex-col gap-2.5">
+
+                <ul className="mt-3 flex flex-1 flex-col gap-2">
                   {item.highlights.map((h) => (
                     <li
                       key={h}
-                      className="flex items-start gap-3 text-sm sm:text-[15px] leading-relaxed text-neutral-700"
+                      className="flex items-start gap-3 text-sm sm:text-[15px] leading-relaxed text-neutral-600"
                     >
-                      <span className="mt-1 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
-                        <Check className="h-2.5 w-2.5" strokeWidth={3.5} />
-                      </span>
+                      <span
+                        aria-hidden="true"
+                        className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-black"
+                      />
                       <span>{h}</span>
                     </li>
                   ))}

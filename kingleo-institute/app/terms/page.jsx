@@ -5,7 +5,7 @@ import Navbar from "@/components/layout/Navbar";
 import MenuModal from "@/components/layout/MenuModal";
 import Footer from "@/components/layout/Footer";
 import FloatingActions from "@/components/floating/FloatingActions";
-import LegalPage from "@/components/legal/LegalPage";
+import SimpleLegalPage from "@/components/legal/SimpleLegalPage";
 import { termsContent } from "@/app/content/legal/terms";
 import { heroContent } from "@/app/content/home/hero";
 import { subPageFooterContent } from "@/app/content/home/footer";
@@ -30,7 +30,7 @@ export default function TermsPage() {
         email={heroContent.contact.email}
       />
 
-      <LegalPage {...termsContent} />
+      <SimpleLegalPage {...termsContent} />
 
       <Footer {...subPageFooterContent} />
 
