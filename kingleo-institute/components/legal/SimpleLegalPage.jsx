@@ -85,7 +85,7 @@ export default function SimpleLegalPage({
           {intro.map((text) => (
             <p
               key={text}
-              className="text-base sm:text-lg leading-relaxed text-neutral-800"
+              className="text-md sm:text-xl text-center leading-relaxed text-neutral-800 font-semibold"
             >
               {text}
             </p>

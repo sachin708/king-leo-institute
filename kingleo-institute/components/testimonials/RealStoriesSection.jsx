@@ -147,10 +147,10 @@ export default function RealStoriesSection({
             return (
               <div
                 key={`${story.name}-${index}`}
-                className="shrink-0 grow-0 basis-[78%] sm:basis-[54%] md:basis-[40%] lg:basis-[27%] px-2 sm:px-3"
+                className="shrink-0 grow-0 basis-[76%] sm:basis-[52%] md:basis-[38%] lg:basis-[25%] px-1.5 sm:px-2"
               >
                 <div
-                  className="h-full min-h-[300px] sm:min-h-[320px] rounded-2xl bg-white p-5 sm:p-6 flex flex-col justify-between border-2 border-zinc-200 shadow-sm"
+                  className="h-full min-h-[280px] sm:min-h-[300px] rounded-2xl bg-white p-5 sm:p-6 flex flex-col justify-between border-2 border-zinc-200 shadow-sm"
                 >
                   <div>
                     {/* Avatar, name/city, stars */}

@@ -177,7 +177,7 @@ export default function Footer({
           ))}
         </div>
 
-        <div className="mt-12 pt-6 border-t border-white/15 flex flex-col items-center justify-center gap-2 text-sm text-zinc-400 text-center">
+        <div className="mt-12 pt-6 border-t border-white/15 flex flex-col items-center justify-center gap-2 text-xs text-zinc-400 text-center">
           <p>{copyright}</p>
           {developer && (
             <p>

@@ -56,7 +56,7 @@ export default function Home() {
     <main className="relative min-h-screen w-full text-white flex flex-col overflow-x-clip selection:bg-emerald-500 selection:text-black">
       {/* Top Navigation Bar with Kingleo Logo and Hamburger */}
       <Navbar
-        logoSrc="/icons/Kinglio-white.png"
+        logoSrc="/icons/Kinglio-white-without-treadmark.png"
         logoAlt="Kingleo Tattooz"
         isMenuOpen={isMenuOpen}
         onMenuToggle={() => setIsMenuOpen((prev) => !prev)}

@@ -11,7 +11,7 @@ export const footerContent = {
     "R.S. Chatwali Gali, Above Sweety Fashion",
     "Indore, Madhya Pradesh",
   ],
-  operationTime: "All Days",
+  operationTime: "All Days :- 12 PM To 6 PM ",
   contacts: {
     phone: "+91 9343623234",
     whatsapp: "+91 9343623234",
@@ -72,7 +72,7 @@ export const footerContent = {
           links: [
             { label: "Privacy Policy", href: "/privacy" },
             { label: "Terms & Condition", href: "/terms" },
-            { label: "Cookie Policy", href: "/cookies" },
+            // { label: "Cookie Policy", href: "/cookies" },
           ],
           socials: true,
         },
@@ -86,7 +86,7 @@ export const footerContent = {
     { type: "pinterest", label: "Pinterest", href: socialUrls.pinterest },
     { type: "linkedin", label: "LinkedIn", href: socialUrls.linkedin },
   ],
-  copyright: "© 2026 Kingleo Tattooz. All rights reserved.",
+  copyright: `All contents © KINGLEO TATTOOZ INSTITUTE™ 2026. All rights reserved. KINGLEO TATTOOZ INSTITUTE™ is a registered Trademark.`,
 };
 
 /**

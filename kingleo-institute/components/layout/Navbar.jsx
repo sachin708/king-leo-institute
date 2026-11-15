@@ -9,7 +9,7 @@ import Link from "next/link";
  * Displays logo on the left and hamburger menu icon on the right.
  */
 export default function Navbar({
-  logoSrc = "/icons/Kinglio-white.png",
+  logoSrc = "/icons/Kinglio-white-without-treadmark.png",
   logoAlt = "Kingleo Tattooz Institute",
   isMenuOpen = false,
   onMenuToggle,

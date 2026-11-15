@@ -11,9 +11,17 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const content = programs[slug];
   if (!content) return {};
+  const name = content.hero.heading.replace(/\s*\n\s*/g, " ");
+  const title = `${name} | Kingleo Tattooz Institute`;
+  const raw = content.hero.description || "";
+  const description =
+    raw.length > 160 ? `${raw.slice(0, raw.lastIndexOf(" ", 157))}...` : raw;
+  const url = `/programs/${slug}`;
   return {
-    title: `${content.hero.heading.replace("\n", " ")} | Kingleo Tattooz Institute`,
-    description: content.hero.description,
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: { title, description, url },
   };
 }
 

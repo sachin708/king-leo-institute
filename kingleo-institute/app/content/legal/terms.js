@@ -9,8 +9,7 @@ export const termsContent = {
   heading: "Terms & Conditions",
   subheading: "Kingleo Tattooz Institute",
   intro: [
-    "Please read these Terms & Conditions carefully before filling out this Google Form or enrolling in any course offered by Kingleo Tattooz Institute (the Institute). These terms apply whenever you access or submit the form and whenever you take part in any course, training, service, or activity provided by the Institute.",
-    "By submitting the form or ticking “I agree to the terms and conditions,” you confirm that you have read, understood, and accepted these terms. If you do not agree with any part of these terms, please do not submit the form or enrol in a course.",
+    "Please read these Terms & Conditions carefully before filling out this Google Form or enrolling in any course offered by Kingleo Tattooz Institute (the Institute). These terms apply whenever you access or submit the form and whenever you take part in any course, training, service, or activity provided by the Institute. By submitting the form or ticking “I agree to the terms and conditions,” you confirm that you have read, understood, and accepted these terms. If you do not agree with any part of these terms, please do not submit the form or enrol in a course.",
   ],
   sections: [
     {
